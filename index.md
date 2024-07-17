@@ -94,13 +94,10 @@ The revised FoS introduces important new requirements for grid model data to be 
 </div>
 
 <div class="section" id="github-issues">
-  <h2>GitHub Issues</h2>
+  <h2>GitHub Open Issues</h2>
   <p>To report an issue or to check existing issues, visit our <a href="https://github.com/your-username/your-repository/issues">GitHub Issues page</a>.</p>
   <div id="issues"></div>
 
-<div id="issues">
-  <h2>Open Issues</h2>
-</div>
 
 </div>
 
