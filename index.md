@@ -113,20 +113,38 @@ The revised FoS introduces important new requirements for grid model data to be 
 <script>
   // Fetch and display GitHub issues
   fetch('https://api.github.com/repos/your-username/your-repository/issues')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
     .then(data => {
       const issuesContainer = document.getElementById('issues');
-      data.forEach(issue => {
-        const issueElement = document.createElement('div');
-        issueElement.className = 'issue';
-        issueElement.innerHTML = `<h3><a href="${issue.html_url}">${issue.title}</a></h3><p>${issue.body}</p>`;
-        issuesContainer.appendChild(issueElement);
-      });
+      if (data.length === 0) {
+        issuesContainer.innerHTML = '<p>No open issues at the moment.</p>';
+      } else {
+        data.forEach(issue => {
+          const issueElement = document.createElement('div');
+          issueElement.className = 'issue';
+          issueElement.innerHTML = `<h3><a href="${issue.html_url}">${issue.title}</a></h3><p>${issue.body}</p>`;
+          issuesContainer.appendChild(issueElement);
+        });
+      }
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+      document.getElementById('issues').innerHTML = '<p>Failed to load issues. Please try again later.</p>';
     });
 
   // Example of fetching news data (replace with your own source)
   fetch('https://api.example.com/news') // Replace with your news API URL
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      return response.json();
+    })
     .then(data => {
       const newsContainer = document.getElementById('news');
       data.articles.forEach(article => {
@@ -135,5 +153,9 @@ The revised FoS introduces important new requirements for grid model data to be 
         articleElement.innerHTML = `<h3>${article.title}</h3><p>${article.description}</p><a href="${article.url}" target="_blank">Read more</a>`;
         newsContainer.appendChild(articleElement);
       });
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+      document.getElementById('news').innerHTML = '<p>Failed to load news. Please try again later.</p>';
     });
 </script>
