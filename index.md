@@ -112,7 +112,7 @@ The revised FoS introduces important new requirements for grid model data to be 
 
 <script>
   // Fetch and display GitHub issues
-  fetch('https://api.github.com/repos/your-username/your-repository/issues')
+  fetch('https://api.github.com/repos/griddigit/ltds/issues')
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok ' + response.statusText);
