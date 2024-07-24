@@ -1,0 +1,2649 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:nc="http://entsoe.eu/ns/nc#"
+    xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#"
+    xmlns:cims="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dcterms="http://purl.org/dc/terms/#"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:ssh="http://ofgem.gov.uk/ns/CIM/LTDS/SteadyStateHypothesis#"
+    xmlns:dm="http://iec.ch/TC57/61970-552/DifferenceModel/1#"
+    xmlns:eu="http://iec.ch/TC57/CIM100-European#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:profcim="http://iec.ch/TC57/ns/CIM/prof-cim#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:sh="http://www.w3.org/ns/shacl#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:prof="http://www.w3.org/ns/dx/prof/#"
+    xmlns:cim="http://iec.ch/TC57/CIM100#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:gb="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#"
+  xml:base="http://iec.ch/TC57/CIM100" > 
+  
+    <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/SteadyStateHypothesis#Ontology">
+    <dcterms:language>en-GB</dcterms:language>
+    <dcterms:publisher xml:lang="en">Ofgem</dcterms:publisher>
+    <dcat:keyword>SSH</dcat:keyword>
+    <dcterms:conformsTo>urn:iso:std:iec:61970-501:draft:ed-2</dcterms:conformsTo>
+    <dcat:theme xml:lang="en">vocabulary</dcat:theme>
+    <owl:versionIRI rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/SteadyStateHypothesis/1.0"/>
+    <dcterms:creator xml:lang="en">Ofgem LTDS WG</dcterms:creator>
+    <owl:versionInfo xml:lang="en">1.0.0</owl:versionInfo>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:conformsTo>file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap</dcterms:conformsTo>
+    <dcterms:identifier>urn:uuid:850d12c3-677a-4c91-9a3d-c8d39dae5d86</dcterms:identifier>
+    <dcterms:title xml:lang="en">LTDS Steady State Hypothesis Vocabulary</dcterms:title>
+    <dcterms:rightsHolder xml:lang="en">Ofgem</dcterms:rightsHolder>
+    <dcterms:conformsTo>urn:iso:std:iec:61970-401:draft:ed-1</dcterms:conformsTo>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-06-26</dcterms:modified>
+    <dcterms:conformsTo>urn:iso:std:iec:61970-600-2:ed-1</dcterms:conformsTo>
+    <dcterms:conformsTo>urn:iso:std:iec:61970-301:ed-7:amd1</dcterms:conformsTo>
+    <dcterms:license xml:lang="en">https://www.apache.org/licenses/LICENSE-2.0</dcterms:license>
+    <dcterms:description xml:lang="en">This vocabulary is describing the LTDS steady state hypothesis profile.</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AsynchronousMachineKind.motor">
+    <rdfs:comment>The Asynchronous Machine is a motor.</rdfs:comment>
+    <rdfs:label xml:lang="en">motor</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#AsynchronousMachineKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AsynchronousMachine.asynchronousMachineType">
+    <rdfs:comment>Indicates the type of Asynchronous Machine (motor or generator).</rdfs:comment>
+    <rdfs:domain rdf:resource="#AsynchronousMachine"/>
+    <rdfs:label xml:lang="en">asynchronousMachineType</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <rdfs:range rdf:resource="#AsynchronousMachineKind"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AsynchronousMachineKind.generator">
+    <rdfs:comment>The Asynchronous Machine is a generator.</rdfs:comment>
+    <rdfs:label xml:lang="en">generator</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#AsynchronousMachineKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BatteryStateKind.full">
+    <rdfs:comment>Unable to charge, and not discharging.</rdfs:comment>
+    <rdfs:label xml:lang="en">full</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#BatteryStateKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BatteryStateKind.charging">
+    <rdfs:comment>Stored energy is increasing.</rdfs:comment>
+    <rdfs:label xml:lang="en">charging</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#BatteryStateKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BatteryStateKind.empty">
+    <rdfs:comment>Unable to discharge, and not charging.</rdfs:comment>
+    <rdfs:label xml:lang="en">empty</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#BatteryStateKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BatteryStateKind.waiting">
+    <rdfs:comment>Neither charging nor discharging, but able to do so.</rdfs:comment>
+    <rdfs:label xml:lang="en">waiting</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#BatteryStateKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BatteryStateKind.discharging">
+    <rdfs:comment>Stored energy is decreasing.</rdfs:comment>
+    <rdfs:label xml:lang="en">discharging</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#BatteryStateKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PowerSystemResource">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.</rdfs:comment>
+    <rdfs:label xml:lang="en">PowerSystemResource</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#LinearShuntCompensator">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A linear shunt compensator has banks or sections with equal admittance values.</rdfs:comment>
+    <rdfs:label xml:lang="en">LinearShuntCompensator</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#ShuntCompensator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#DisconnectingCircuitBreaker">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A circuit breaking device including disconnecting function, eliminating the need for separate disconnectors.</rdfs:comment>
+    <rdfs:label xml:lang="en">DisconnectingCircuitBreaker</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#Breaker"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ThermalGeneratingUnit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine.</rdfs:comment>
+    <rdfs:label xml:lang="en">ThermalGeneratingUnit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#GeneratingUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PowerElectronicsConnection">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A connection to the AC network for energy production or consumption that uses power electronics rather than rotating machines.</rdfs:comment>
+    <rdfs:label xml:lang="en">PowerElectronicsConnection</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#RegulatingCondEq"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TapChangerControl">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Describes behaviour specific to tap changers, e.g. how the voltage at the end of a line varies with the load level and compensation of the voltage drop by tap adjustment.</rdfs:comment>
+    <rdfs:label xml:lang="en">TapChangerControl</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#RegulatingControl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PhaseTapChangerTabular">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Describes a tap changer with a table defining the relation between the tap step and the phase angle difference across the transformer. </rdfs:comment>
+    <rdfs:label xml:lang="en">PhaseTapChangerTabular</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#PhaseTapChanger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Resistance">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Resistance (real part of impedance).</rdfs:comment>
+    <rdfs:label xml:lang="en">Resistance</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EquivalentInjection">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>This class represents equivalent injections (generation or load).  Voltage regulation is allowed only at the point of connection.</rdfs:comment>
+    <rdfs:label xml:lang="en">EquivalentInjection</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#EquivalentEquipment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RatioTapChanger">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer.
+
+Angle sign convention (general): Positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer).</rdfs:comment>
+    <rdfs:label xml:lang="en">RatioTapChanger</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#TapChanger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#String">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_DocLTDSextendedSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.</rdfs:comment>
+    <rdfs:label xml:lang="en">String</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SolarGeneratingUnit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A solar thermal generating unit, connected to the grid by means of a rotating machine.  This class does not represent photovoltaic (PV) generation.</rdfs:comment>
+    <rdfs:label xml:lang="en">SolarGeneratingUnit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#GeneratingUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#NuclearGeneratingUnit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A nuclear generating unit.</rdfs:comment>
+    <rdfs:label xml:lang="en">NuclearGeneratingUnit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#GeneratingUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Date">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_DocLTDSextendedSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Date as "yyyy-mm-dd", which conforms with ISO 8601. UTC time zone is specified as "yyyy-mm-ddZ". A local timezone relative UTC is specified as "yyyy-mm-dd(+/-)hh:mm".</rdfs:comment>
+    <rdfs:label xml:lang="en">Date</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PU">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10.</rdfs:comment>
+    <rdfs:label xml:lang="en">PU</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ActivePower">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Product of RMS value of the voltage and the RMS value of the in-phase component of the current.</rdfs:comment>
+    <rdfs:label xml:lang="en">ActivePower</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#IRI">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_DocLTDSextendedSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <rdfs:comment>An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.
+The primitive is serialized as rdf:resource in RDFXML.
+IRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.
+IRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.
+IRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names.</rdfs:comment>
+    <rdfs:label xml:lang="en">IRI</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <cims:stereotype>profcim</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#StaticVarCompensator">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.
+
+The SVC may operate in fixed MVar output mode or in voltage control mode. When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero.</rdfs:comment>
+    <rdfs:label xml:lang="en">StaticVarCompensator</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#RegulatingCondEq"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleDegrees">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Measurement of angle in degrees.</rdfs:comment>
+    <rdfs:label xml:lang="en">AngleDegrees</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SynchronousMachineOperatingMode">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Synchronous machine operating mode.</rdfs:comment>
+    <rdfs:label xml:lang="en">SynchronousMachineOperatingMode</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#enumeration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ProtectedSwitch">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment.</rdfs:comment>
+    <rdfs:label xml:lang="en">ProtectedSwitch</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Switch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleRadians">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Phase angle in radians.</rdfs:comment>
+    <rdfs:label xml:lang="en">AngleRadians</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Boolean">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A type with the value space "true" and "false".</rdfs:comment>
+    <rdfs:label xml:lang="en">Boolean</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PowerElectronicsUnit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A generating unit or battery or aggregation that connects to the AC network using power electronics rather than rotating machines.</rdfs:comment>
+    <rdfs:label xml:lang="en">PowerElectronicsUnit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Switch">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_LTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant.</rdfs:comment>
+    <rdfs:label xml:lang="en">Switch</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#ConductingEquipment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Fuse">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current.</rdfs:comment>
+    <rdfs:label xml:lang="en">Fuse</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#Switch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type. 
+
+For example, if a unit symbol is "m2Pers" and the multiplier is "k", then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol "Þ" represents the derived unit "m2Pers", then applying the multiplier "k" can be conceptualized simply as "kÞ".
+
+For example, the SI unit for mass is "kg" and not "g".  If the unit symbol is defined as "kg", then the multiplier is applied to "kg" as a whole and does not replace the "k" in front of the "g". In this case, the multiplier of "m" would be used with the unit symbol of "kg" to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the "kg" as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the "kg" were replaced by a symbol "Þ", then it is easier to conceptualize the multiplier "m" as creating the proper unit "mÞ", and not the forbidden unit "mkg".</rdfs:comment>
+    <rdfs:label xml:lang="en">UnitMultiplier</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#enumeration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ShuntCompensator">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor. A negative value for bPerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied.</rdfs:comment>
+    <rdfs:label xml:lang="en">ShuntCompensator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#RegulatingCondEq"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CurrentLimit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Operational limit on current. </rdfs:comment>
+    <rdfs:label xml:lang="en">CurrentLimit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#OperationalLimit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PhaseTapChangerAsymmetrical">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Describes the tap model for an asymmetrical phase shifting transformer in which the difference voltage vector adds to the in-phase winding. The out-of-phase winding is the transformer end where the tap changer is located.  The angle between the in-phase and out-of-phase windings is named the winding connection angle. The phase shift depends on both the difference voltage magnitude and the winding connection angle.</rdfs:comment>
+    <rdfs:label xml:lang="en">PhaseTapChangerAsymmetrical</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#PhaseTapChangerNonLinear"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ConductingEquipment">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.</rdfs:comment>
+    <rdfs:label xml:lang="en">ConductingEquipment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AsynchronousMachineKind">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Kind of Asynchronous Machine.</rdfs:comment>
+    <rdfs:label xml:lang="en">AsynchronousMachineKind</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#enumeration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PhaseTapChangerSymmetrical">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Describes a symmetrical phase shifting transformer tap model in which the voltage magnitude of both sides is the same. The difference voltage magnitude is the base in an equal-sided triangle where the sides corresponds to the primary and secondary voltages. The phase angle difference corresponds to the top angle and can be expressed as twice the arctangent of half the total difference voltage.</rdfs:comment>
+    <rdfs:label xml:lang="en">PhaseTapChangerSymmetrical</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#PhaseTapChangerNonLinear"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>This is a root class to provide common identification for all classes needing identification and naming attributes.</rdfs:comment>
+    <rdfs:label xml:lang="en">IdentifiedObject</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PhaseTapChanger">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A transformer phase shifting tap model that controls the phase angle difference across the power transformer and potentially the active power flow through the power transformer.  This phase tap model may also impact the voltage magnitude.</rdfs:comment>
+    <rdfs:label xml:lang="en">PhaseTapChanger</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#TapChanger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingCondEq">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network. </rdfs:comment>
+    <rdfs:label xml:lang="en">RegulatingCondEq</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <rdfs:subClassOf rdf:resource="#EnergyConnection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ApparentPowerLimit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Apparent power limit.</rdfs:comment>
+    <rdfs:label xml:lang="en">ApparentPowerLimit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#OperationalLimit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#GeneratingUnit">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_LTDSextendedSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set.</rdfs:comment>
+    <rdfs:label xml:lang="en">GeneratingUnit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PhaseTapChangerNonLinear">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>The non-linear phase tap changer describes the non-linear behaviour of a phase tap changer. This is a base class for the symmetrical and asymmetrical phase tap changer models. The details of these models can be found in IEC 61970-301.</rdfs:comment>
+    <rdfs:label xml:lang="en">PhaseTapChangerNonLinear</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PhaseTapChanger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BatteryUnit">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_LTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>An electrochemical energy storage device.</rdfs:comment>
+    <rdfs:label xml:lang="en">BatteryUnit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#PowerElectronicsUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PerCent">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Percentage on a defined base.   For example, specify as 100 to indicate at the defined base.</rdfs:comment>
+    <rdfs:label xml:lang="en">PerCent</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Integer">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>An integer number. The range is unspecified and not limited.</rdfs:comment>
+    <rdfs:label xml:lang="en">Integer</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#GroundDisconnector">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from ground.</rdfs:comment>
+    <rdfs:label xml:lang="en">GroundDisconnector</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#Switch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Breaker">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.</rdfs:comment>
+    <rdfs:label xml:lang="en">Breaker</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#ProtectedSwitch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Equipment">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>The parts of a power system that are physical devices, electronic or mechanical.</rdfs:comment>
+    <rdfs:label xml:lang="en">Equipment</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#PowerSystemResource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#NonlinearShuntCompensator">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A non linear shunt compensator has bank or section admittance values that differ. The attributes g, b, g0 and b0 of the associated NonlinearShuntCompensatorPoint describe the total conductance and admittance of a NonlinearShuntCompensatorPoint at a section number specified by NonlinearShuntCompensatorPoint.sectionNumber.</rdfs:comment>
+    <rdfs:label xml:lang="en">NonlinearShuntCompensator</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#ShuntCompensator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ApparentPower">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Product of the RMS value of the voltage and the RMS value of the current.</rdfs:comment>
+    <rdfs:label xml:lang="en">ApparentPower</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#URL">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_DocLTDSextendedSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <rdfs:comment>A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications.</rdfs:comment>
+    <rdfs:label xml:lang="en">URL</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <cims:stereotype>profcim</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EquivalentEquipment">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>The class represents equivalent objects that are the result of a network reduction. The class is the base for equivalent objects of different types.</rdfs:comment>
+    <rdfs:label xml:lang="en">EquivalentEquipment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#ConductingEquipment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ReactivePower">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Product of RMS value of the voltage and the RMS value of the quadrature component of the current.</rdfs:comment>
+    <rdfs:label xml:lang="en">ReactivePower</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EnergyConsumer">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Generic user of energy - a  point of consumption on the power system model.
+EnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if there is no LoadResponseCharacteristic associated with EnergyConsumer or if LoadResponseCharacteristic.exponentModel is set to False.</rdfs:comment>
+    <rdfs:label xml:lang="en">EnergyConsumer</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#EnergyConnection"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#FlywheelUnit">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_LTDSextendedSteadyStateHypothesisProfile"/>
+    <rdfs:comment>A flywheel is a mechanical device which uses the conservation of angular momentum to store rotational energy. Therefore, it is a heavy wheel attached to a rotating shaft so as to smooth out delivery of power from a motor to a machine. The inertia of the flywheel opposes and moderates fluctuations in the speed of the engine and stores the excess energy for intermittent use.</rdfs:comment>
+    <rdfs:label xml:lang="en">FlywheelUnit</rdfs:label>
+    <cims:stereotype>GB</cims:stereotype>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#GeneratingUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#DateTime">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_DocLTDSextendedSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <rdfs:comment>Date and time as "yyyy-mm-ddThh:mm:ss.sss", which conforms with ISO 8601. UTC time zone is specified as "yyyy-mm-ddThh:mm:ss.sssZ". A local timezone relative UTC is specified as "yyyy-mm-ddThh:mm:ss.sss-hh:mm". The second component (shown here as "ss.sss") could have any number of digits in its fractional part to allow any kind of precision beyond seconds.</rdfs:comment>
+    <rdfs:label xml:lang="en">DateTime</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#StringFixedLanguage">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_DocLTDSextendedSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <rdfs:comment>A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.
+The primitive is serialized as literal without language support.</rdfs:comment>
+    <rdfs:label xml:lang="en">StringFixedLanguage</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <cims:stereotype>profcim</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SynchronousMachine">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>An electromechanical device that operates with shaft rotating synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump.</rdfs:comment>
+    <rdfs:label xml:lang="en">SynchronousMachine</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#RotatingMachine"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TapChanger">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Mechanism for changing transformer winding tap positions.</rdfs:comment>
+    <rdfs:label xml:lang="en">TapChanger</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#PowerSystemResource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AsynchronousMachine">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A rotating machine whose shaft rotates asynchronously with the electrical field.  Also known as an induction machine with no external connection to the rotor windings, e.g. squirrel-cage induction machine.</rdfs:comment>
+    <rdfs:label xml:lang="en">AsynchronousMachine</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#RotatingMachine"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#LoadBreakSwitch">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.</rdfs:comment>
+    <rdfs:label xml:lang="en">LoadBreakSwitch</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#ProtectedSwitch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#WindGeneratingUnit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A wind driven generating unit, connected to the grid by means of a rotating machine.  May be used to represent a single turbine or an aggregation.    </rdfs:comment>
+    <rdfs:label xml:lang="en">WindGeneratingUnit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#GeneratingUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Voltage">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Electrical voltage, can be both AC and DC.</rdfs:comment>
+    <rdfs:label xml:lang="en">Voltage</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#OperationalLimit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A value and normal value associated with a specific kind of limit. 
+The sub class value and normalValue attributes vary inversely to the associated OperationalLimitType.acceptableDuration (acceptableDuration for short).  
+If a particular piece of equipment has multiple operational limits of the same kind (apparent power, current, etc.), the limit with the greatest acceptableDuration shall have the smallest limit value and the limit with the smallest acceptableDuration shall have the largest limit value.  Note: A large current can only be allowed to flow through a piece of equipment for a short duration without causing damage, but a lesser current can be allowed to flow for a longer duration. </rdfs:comment>
+    <rdfs:label xml:lang="en">OperationalLimit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RealEnergy">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Real electrical energy.</rdfs:comment>
+    <rdfs:label xml:lang="en">RealEnergy</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as "F" instead of "CPerV". In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as "kgPerm3". With the exception of the "kg", which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole. 
+Every unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.
+To allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol "/" is replaced by the letters "Per". Exponents are written in plain text after the unit as "m3" instead of being formatted as "m" with a superscript of 3  or introducing a symbol as in "m^3". The degree symbol "°" is replaced with the letters "deg". Any clarification of the meaning for a substitution is included in the description for the unit symbol.
+Non-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units. 
+The integer values are used for harmonization with IEC 61850.</rdfs:comment>
+    <rdfs:label xml:lang="en">UnitSymbol</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#enumeration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Disconnector">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made. </rdfs:comment>
+    <rdfs:label xml:lang="en">Disconnector</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#Switch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PhaseTapChangerLinear">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Describes a tap changer with a linear relation between the tap step and the phase angle difference across the transformer. This is a mathematical model that is an approximation of a real phase tap changer.
+The phase angle is computed as stepPhaseShiftIncrement times the tap position.
+The voltage magnitude of both sides is the same.</rdfs:comment>
+    <rdfs:label xml:lang="en">PhaseTapChangerLinear</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#PhaseTapChanger"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EnergyConnection">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A connection of energy generation or consumption on the power system model.</rdfs:comment>
+    <rdfs:label xml:lang="en">EnergyConnection</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#ConductingEquipment"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RotatingMachine">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A rotating machine which may be used as a generator or motor.</rdfs:comment>
+    <rdfs:label xml:lang="en">RotatingMachine</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#RegulatingCondEq"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Float">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A floating point number. The range is unspecified and not limited.</rdfs:comment>
+    <rdfs:label xml:lang="en">Float</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#HydroGeneratingUnit">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan).</rdfs:comment>
+    <rdfs:label xml:lang="en">HydroGeneratingUnit</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#GeneratingUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CurrentFlow">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC.</rdfs:comment>
+    <rdfs:label xml:lang="en">CurrentFlow</rdfs:label>
+    <cims:stereotype>CIMDatatype</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#StringIRI">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_DocLTDSextendedSteadyStateHypothesisProfile"/>
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile"/>
+    <rdfs:comment>An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.
+The primitive is serialized as literal without language support.
+IRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.
+IRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.
+IRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names.</rdfs:comment>
+    <rdfs:label xml:lang="en">StringIRI</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <cims:stereotype>profcim</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl">
+    <cims:belongsToCategory rdf:resource="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile"/>
+    <rdfs:comment>Specifies a set of equipment that works together to control a power system quantity such as voltage or flow. 
+Remote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment.
+The specified terminal shall be associated with the connectivity node of the controlled point.  The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers.
+For flow control, load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.
+The attribute minAllowedTargetValue and maxAllowedTargetValue are required in the following cases:
+- For a power generating module operated in power factor control mode to specify maximum and minimum power factor values;
+- Whenever it is necessary to have an off center target voltage for the tap changer regulator. For instance, due to long cables to off shore wind farms and the need to have a simpler setup at the off shore transformer platform, the voltage is controlled from the land at the connection point for the off shore wind farm. Since there usually is a voltage rise along the cable, there is typical and overvoltage of up 3-4 kV compared to the on shore station. Thus in normal operation the tap changer on the on shore station is operated with a target set point, which is in the lower parts of the dead band.
+The attributes minAllowedTargetValue and maxAllowedTargetValue are not related to the attribute targetDeadband and thus they are not treated as an alternative of the targetDeadband. They are needed due to limitations in the local substation controller. The attribute targetDeadband is used to prevent the power flow from move the tap position in circles (hunting) that is to be used regardless of the attributes minAllowedTargetValue and maxAllowedTargetValue.</rdfs:comment>
+    <rdfs:label xml:lang="en">RegulatingControl</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#PowerSystemResource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://entsoe.eu/ns/nc#GeothermalGeneratingUnit">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_LTDSextendedSteadyStateHypothesisProfile"/>
+    <rdfs:comment>Generating unit that is generating electrical power from geothermal energy. Technologies in use include dry steam power stations, flash steam power stations and binary cycle power stations. </rdfs:comment>
+    <rdfs:label xml:lang="en">GeothermalGeneratingUnit</rdfs:label>
+    <cims:stereotype>NC</cims:stereotype>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#GeneratingUnit"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_DocLTDSextendedSteadyStateHypothesisProfile">
+    <rdfs:comment>This package contains datatypes that are only used in the version/ontology class and do not need to be printed in the documentation.</rdfs:comment>
+    <rdfs:label xml:lang="en">DocLTDSextendedSteadyStateHypothesisProfile</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_LTDSdeviationCGMESSteadyStateHypothesisProfile">
+    <rdfs:comment>The LTDS Deviation Steady State Hypothesis profile defines deviations from the CGMES Steady State Hypothesis profile.</rdfs:comment>
+    <rdfs:label xml:lang="en">LTDSdeviationCGMESSteadyStateHypothesisProfile</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationSSH#Package_DocLTDSdeviationCGMESSteadyStateHypothesisProfile">
+    <rdfs:comment>This package contains two types of information:
+&lt;ul&gt;
+	&lt;li&gt;A list of classes present in the CGMES profile, but not used by LTDS  &lt;/li&gt;
+	&lt;li&gt;The datatypes (enumerations, CIMDatatypes, primitives) that are not used by LTDS (and do not need to be printed in documentation) but are needed to support profile definition.&lt;/li&gt;
+&lt;/ul&gt;</rdfs:comment>
+    <rdfs:label xml:lang="en">DocLTDSdeviationCGMESSteadyStateHypothesisProfile</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/ExtendedSSH#Package_LTDSextendedSteadyStateHypothesisProfile">
+    <rdfs:comment>The LTDS Extended Steady State Hypothesis profile defines extensions to the CGMES Steady State Hypothesis profile.</rdfs:comment>
+    <rdfs:label xml:lang="en">LTDSextendedSteadyStateHypothesisProfile</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile">
+    <rdfs:comment>A steady state hypothesis dataset which conforms to the IEC 61970-456 steady state hypothesis profile contains all objects required to exchange input parameters to be able to perform load flow simulations. Due to the nature of the SSH profile, all objects in a Steady State Hypothesis instance file should have persistent mRIDs.</rdfs:comment>
+    <rdfs:label xml:lang="en">SteadyStateHypothesisProfile</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CsOperatingModeKind.rectifier">
+    <rdfs:comment>Operating as rectifier, which is the power sending end.</rdfs:comment>
+    <rdfs:label xml:lang="en">rectifier</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#CsOperatingModeKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CsOperatingModeKind.inverter">
+    <rdfs:comment>Operating as inverter, which is the power receiving end.</rdfs:comment>
+    <rdfs:label xml:lang="en">inverter</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#CsOperatingModeKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CsPpccControlKind.dcCurrent">
+    <rdfs:comment>Control is DC current  with target value provided by CsConverter.targetIdc.</rdfs:comment>
+    <rdfs:label xml:lang="en">dcCurrent</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#CsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CsPpccControlKind.activePower">
+    <rdfs:comment>Control is active power control at AC side, at point of common coupling. Target is provided by ACDCConverter.targetPpcc.</rdfs:comment>
+    <rdfs:label xml:lang="en">activePower</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#CsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CsPpccControlKind.dcVoltage">
+    <rdfs:comment>Control is DC voltage  with target value provided by ACDCConverter.targetUdc.</rdfs:comment>
+    <rdfs:label xml:lang="en">dcVoltage</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#CsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CurrentFlow.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#CurrentFlow"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Voltage.multiplier">
+    <rdfs:domain rdf:resource="#Voltage"/>
+    <cims:isFixed>k</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ReactivePower.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#ReactivePower"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TapChanger.controlEnabled">
+    <rdfs:comment>Specifies the regulation status of the equipment.  True is regulating, false is not regulating.</rdfs:comment>
+    <cims:dataType rdf:resource="#Boolean"/>
+    <rdfs:domain rdf:resource="#TapChanger"/>
+    <rdfs:label xml:lang="en">controlEnabled</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EquivalentInjection.regulationStatus">
+    <rdfs:comment>Specifies the regulation status of the EquivalentInjection.  True is regulating.  False is not regulating.</rdfs:comment>
+    <cims:dataType rdf:resource="#Boolean"/>
+    <rdfs:domain rdf:resource="#EquivalentInjection"/>
+    <rdfs:label xml:lang="en">regulationStatus</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl.targetDeadband">
+    <rdfs:comment>This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.  The units of those appropriate for the mode. The attribute shall be a positive value or zero. If RegulatingControl.discrete is set to "false", the RegulatingControl.targetDeadband is to be ignored.
+Note that for instance, if the targetValue is 100 kV and the targetDeadband is 2 kV the range is from 99 to 101 kV.</rdfs:comment>
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#RegulatingControl"/>
+    <rdfs:label xml:lang="en">targetDeadband</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ReactivePower.multiplier">
+    <rdfs:domain rdf:resource="#ReactivePower"/>
+    <cims:isFixed>M</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EquivalentInjection.q">
+    <rdfs:comment>Equivalent reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for steady state solutions.</rdfs:comment>
+    <cims:dataType rdf:resource="#ReactivePower"/>
+    <rdfs:domain rdf:resource="#EquivalentInjection"/>
+    <rdfs:label xml:lang="en">q</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PU.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#PU"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl.minAllowedTargetValue">
+    <rdfs:comment>Minimum allowed target value (RegulatingControl.targetValue).</rdfs:comment>
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#RegulatingControl"/>
+    <rdfs:label xml:lang="en">minAllowedTargetValue</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PU.multiplier">
+    <rdfs:domain rdf:resource="#PU"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SynchronousMachine.operatingMode">
+    <rdfs:comment>Current mode of operation.</rdfs:comment>
+    <rdfs:domain rdf:resource="#SynchronousMachine"/>
+    <rdfs:label xml:lang="en">operatingMode</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <rdfs:range rdf:resource="#SynchronousMachineOperatingMode"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CurrentLimit.value">
+    <rdfs:comment>Limit on current flow. The attribute shall be a positive value or zero.</rdfs:comment>
+    <cims:dataType rdf:resource="#CurrentFlow"/>
+    <rdfs:domain rdf:resource="#CurrentLimit"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RotatingMachine.p">
+    <rdfs:comment>Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for a steady state solution.</rdfs:comment>
+    <cims:dataType rdf:resource="#ActivePower"/>
+    <rdfs:domain rdf:resource="#RotatingMachine"/>
+    <rdfs:label xml:lang="en">p</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PowerElectronicsConnection.p">
+    <rdfs:comment>Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for a steady state solution.</rdfs:comment>
+    <cims:dataType rdf:resource="#ActivePower"/>
+    <rdfs:domain rdf:resource="#PowerElectronicsConnection"/>
+    <rdfs:label xml:lang="en">p</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ApparentPower.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#ApparentPower"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CurrentFlow.multiplier">
+    <rdfs:domain rdf:resource="#CurrentFlow"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PowerElectronicsConnection.q">
+    <rdfs:comment>Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for a steady state solution.</rdfs:comment>
+    <cims:dataType rdf:resource="#ReactivePower"/>
+    <rdfs:domain rdf:resource="#PowerElectronicsConnection"/>
+    <rdfs:label xml:lang="en">q</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EquivalentInjection.regulationTarget">
+    <rdfs:comment>The target voltage for voltage regulation. The attribute shall be a positive value.</rdfs:comment>
+    <cims:dataType rdf:resource="#Voltage"/>
+    <rdfs:domain rdf:resource="#EquivalentInjection"/>
+    <rdfs:label xml:lang="en">regulationTarget</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleDegrees.multiplier">
+    <rdfs:domain rdf:resource="#AngleDegrees"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PerCent.unit">
+    <rdfs:domain rdf:resource="#PerCent"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#StaticVarCompensator.q">
+    <rdfs:comment>Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for a steady state solution.</rdfs:comment>
+    <cims:dataType rdf:resource="#ReactivePower"/>
+    <rdfs:domain rdf:resource="#StaticVarCompensator"/>
+    <rdfs:label xml:lang="en">q</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RealEnergy.multiplier">
+    <rdfs:domain rdf:resource="#RealEnergy"/>
+    <cims:isFixed>M</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl.targetValueUnitMultiplier">
+    <rdfs:comment>Specify the multiplier for used for the targetValue.</rdfs:comment>
+    <rdfs:domain rdf:resource="#RegulatingControl"/>
+    <rdfs:label xml:lang="en">targetValueUnitMultiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Voltage.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#Voltage"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ApparentPower.unit">
+    <rdfs:domain rdf:resource="#ApparentPower"/>
+    <cims:isFixed>VA</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ShuntCompensator.sections">
+    <rdfs:comment>Shunt compensator sections in use. Starting value for steady state solution. The attribute shall be a positive value or zero. Non integer values are allowed to support continuous variables. The reasons for continuous value are to support study cases where no discrete shunt compensators has yet been designed, a solutions where a narrow voltage band force the sections to oscillate or accommodate for a continuous solution as input. 
+For LinearShuntConpensator the value shall be between zero and ShuntCompensator.maximumSections. At value zero the shunt compensator conductance and admittance is zero. Linear interpolation of conductance and admittance between the previous and next integer section is applied in case of non-integer values.
+For NonlinearShuntCompensator-s shall only be set to one of the NonlinearShuntCompenstorPoint.sectionNumber. There is no interpolation between NonlinearShuntCompenstorPoint-s.</rdfs:comment>
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#ShuntCompensator"/>
+    <rdfs:label xml:lang="en">sections</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CurrentFlow.unit">
+    <rdfs:domain rdf:resource="#CurrentFlow"/>
+    <cims:isFixed>A</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ActivePower.multiplier">
+    <rdfs:domain rdf:resource="#ActivePower"/>
+    <cims:isFixed>M</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RealEnergy.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#RealEnergy"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject.mRID">
+    <rdfs:comment>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</rdfs:comment>
+    <cims:dataType rdf:resource="#String"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <rdfs:label xml:lang="en">mRID</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#GeneratingUnit.normalPF">
+    <rdfs:comment>Generating unit economic participation factor.  The sum of the participation factors across generating units does not have to sum to one.  It is used for representing distributed slack participation factor. The attribute shall be a positive value or zero.</rdfs:comment>
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#GeneratingUnit"/>
+    <rdfs:label xml:lang="en">normalPF</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleRadians.unit">
+    <rdfs:domain rdf:resource="#AngleRadians"/>
+    <cims:isFixed>rad</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ActivePower.unit">
+    <rdfs:domain rdf:resource="#ActivePower"/>
+    <cims:isFixed>W</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Voltage.unit">
+    <rdfs:domain rdf:resource="#Voltage"/>
+    <cims:isFixed>V</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EquivalentInjection.p">
+    <rdfs:comment>Equivalent active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for steady state solutions.</rdfs:comment>
+    <cims:dataType rdf:resource="#ActivePower"/>
+    <rdfs:domain rdf:resource="#EquivalentInjection"/>
+    <rdfs:label xml:lang="en">p</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EnergyConsumer.p">
+    <rdfs:comment>Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.
+For voltage dependent loads the value is at rated voltage.
+Starting value for a steady state solution.</rdfs:comment>
+    <cims:dataType rdf:resource="#ActivePower"/>
+    <rdfs:domain rdf:resource="#EnergyConsumer"/>
+    <rdfs:label xml:lang="en">p</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleDegrees.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#AngleDegrees"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Resistance.unit">
+    <rdfs:domain rdf:resource="#Resistance"/>
+    <cims:isFixed>ohm</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PerCent.value">
+    <rdfs:comment>Normally 0 to 100 on a defined base.</rdfs:comment>
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#PerCent"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#EnergyConsumer.q">
+    <rdfs:comment>Reactive power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.
+For voltage dependent loads the value is at rated voltage.
+Starting value for a steady state solution.</rdfs:comment>
+    <cims:dataType rdf:resource="#ReactivePower"/>
+    <rdfs:domain rdf:resource="#EnergyConsumer"/>
+    <rdfs:label xml:lang="en">q</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PerCent.multiplier">
+    <rdfs:domain rdf:resource="#PerCent"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl.enabled">
+    <rdfs:comment>The flag tells if regulation is enabled.</rdfs:comment>
+    <cims:dataType rdf:resource="#Boolean"/>
+    <rdfs:domain rdf:resource="#RegulatingControl"/>
+    <rdfs:label xml:lang="en">enabled</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Resistance.multiplier">
+    <rdfs:domain rdf:resource="#Resistance"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleRadians.multiplier">
+    <rdfs:domain rdf:resource="#AngleRadians"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingCondEq.controlEnabled">
+    <rdfs:comment>Specifies the regulation status of the equipment.  True is regulating, false is not regulating.</rdfs:comment>
+    <cims:dataType rdf:resource="#Boolean"/>
+    <rdfs:domain rdf:resource="#RegulatingCondEq"/>
+    <rdfs:label xml:lang="en">controlEnabled</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Switch.open">
+    <rdfs:comment>The attribute tells if the switch is considered open when used as input to topology processing.</rdfs:comment>
+    <cims:dataType rdf:resource="#Boolean"/>
+    <rdfs:domain rdf:resource="#Switch"/>
+    <rdfs:label xml:lang="en">open</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl.maxAllowedTargetValue">
+    <rdfs:comment>Maximum allowed target value (RegulatingControl.targetValue).</rdfs:comment>
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#RegulatingControl"/>
+    <rdfs:label xml:lang="en">maxAllowedTargetValue</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl.discrete">
+    <rdfs:comment>The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators.</rdfs:comment>
+    <cims:dataType rdf:resource="#Boolean"/>
+    <rdfs:domain rdf:resource="#RegulatingControl"/>
+    <rdfs:label xml:lang="en">discrete</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SynchronousMachine.referencePriority">
+    <rdfs:comment>Priority of unit for use as powerflow voltage phase angle reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on.</rdfs:comment>
+    <cims:dataType rdf:resource="#Integer"/>
+    <rdfs:domain rdf:resource="#SynchronousMachine"/>
+    <rdfs:label xml:lang="en">referencePriority</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RealEnergy.unit">
+    <rdfs:domain rdf:resource="#RealEnergy"/>
+    <cims:isFixed>Wh</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BatteryUnit.storedE">
+    <rdfs:comment>Amount of energy currently stored. The attribute shall be a positive value or zero and lower than BatteryUnit.ratedE.</rdfs:comment>
+    <cims:dataType rdf:resource="#RealEnergy"/>
+    <rdfs:domain rdf:resource="#BatteryUnit"/>
+    <rdfs:label xml:lang="en">storedE</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TapChanger.step">
+    <rdfs:comment>Tap changer position.
+Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changer has yet been designed, a solution where a narrow voltage band forces the tap step to oscillate or to accommodate for a continuous solution as input.
+The attribute shall be equal to or greater than lowStep and equal to or less than highStep.</rdfs:comment>
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#TapChanger"/>
+    <rdfs:label xml:lang="en">step</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RotatingMachine.q">
+    <rdfs:comment>Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.
+Starting value for a steady state solution.</rdfs:comment>
+    <cims:dataType rdf:resource="#ReactivePower"/>
+    <rdfs:domain rdf:resource="#RotatingMachine"/>
+    <rdfs:label xml:lang="en">q</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleRadians.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#AngleRadians"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ReactivePower.unit">
+    <rdfs:domain rdf:resource="#ReactivePower"/>
+    <cims:isFixed>VAr</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl.targetValue">
+    <rdfs:comment>The target value specified for case input.   This value can be used for the target value without the use of schedules. The value has the units appropriate to the mode attribute.</rdfs:comment>
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#RegulatingControl"/>
+    <rdfs:label xml:lang="en">targetValue</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Resistance.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#Resistance"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AsynchronousMachine.asynchronousMachineType">
+    <rdfs:comment>Indicates the type of Asynchronous Machine (motor or generator).</rdfs:comment>
+    <rdfs:domain rdf:resource="#AsynchronousMachine"/>
+    <rdfs:label xml:lang="en">asynchronousMachineType</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <rdfs:range rdf:resource="#AsynchronousMachineKind"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ActivePower.value">
+    <cims:dataType rdf:resource="#Float"/>
+    <rdfs:domain rdf:resource="#ActivePower"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Equipment.inService">
+    <rdfs:comment>Specifies the availability of the equipment. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model.</rdfs:comment>
+    <cims:dataType rdf:resource="#Boolean"/>
+    <rdfs:domain rdf:resource="#Equipment"/>
+    <rdfs:label xml:lang="en">inService</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PU.unit">
+    <rdfs:domain rdf:resource="#PU"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleDegrees.unit">
+    <rdfs:domain rdf:resource="#AngleDegrees"/>
+    <cims:isFixed>deg</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ApparentPower.multiplier">
+    <rdfs:domain rdf:resource="#ApparentPower"/>
+    <cims:isFixed>M</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ApparentPowerLimit.value">
+    <rdfs:comment>The apparent power limit. The attribute shall be a positive value or zero.</rdfs:comment>
+    <cims:dataType rdf:resource="#ApparentPower"/>
+    <rdfs:domain rdf:resource="#ApparentPowerLimit"/>
+    <rdfs:label xml:lang="en">value</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SynchronousMachineOperatingMode.motor">
+    <rdfs:comment>Operating as motor.</rdfs:comment>
+    <rdfs:label xml:lang="en">motor</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#SynchronousMachineOperatingMode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SynchronousMachineOperatingMode.condenser">
+    <rdfs:comment>Operating as condenser.</rdfs:comment>
+    <rdfs:label xml:lang="en">condenser</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#SynchronousMachineOperatingMode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SynchronousMachineOperatingMode.generator">
+    <rdfs:comment>Operating as generator.</rdfs:comment>
+    <rdfs:label xml:lang="en">generator</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#SynchronousMachineOperatingMode"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SynchronousMachine.operatingMode">
+    <rdfs:comment>Current mode of operation.</rdfs:comment>
+    <rdfs:domain rdf:resource="#SynchronousMachine"/>
+    <rdfs:label xml:lang="en">operatingMode</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <rdfs:range rdf:resource="#SynchronousMachineOperatingMode"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.d">
+    <rdfs:comment>Deci 10**-1.</rdfs:comment>
+    <rdfs:label xml:lang="en">d</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ApparentPower.multiplier">
+    <rdfs:domain rdf:resource="#ApparentPower"/>
+    <cims:isFixed>M</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.E">
+    <rdfs:comment>Exa 10**18.</rdfs:comment>
+    <rdfs:label xml:lang="en">E</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.Z">
+    <rdfs:comment>Zetta 10**21.</rdfs:comment>
+    <rdfs:label xml:lang="en">Z</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.y">
+    <rdfs:comment>Yocto 10**-24.</rdfs:comment>
+    <rdfs:label xml:lang="en">y</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CurrentFlow.multiplier">
+    <rdfs:domain rdf:resource="#CurrentFlow"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.G">
+    <rdfs:comment>Giga 10**9.</rdfs:comment>
+    <rdfs:label xml:lang="en">G</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Voltage.multiplier">
+    <rdfs:domain rdf:resource="#Voltage"/>
+    <cims:isFixed>k</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.none">
+    <rdfs:comment>No multiplier or equivalently multiply by 1.</rdfs:comment>
+    <rdfs:label xml:lang="en">none</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PU.multiplier">
+    <rdfs:domain rdf:resource="#PU"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.n">
+    <rdfs:comment>Nano 10**-9.</rdfs:comment>
+    <rdfs:label xml:lang="en">n</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.da">
+    <rdfs:comment>Deca 10**1.</rdfs:comment>
+    <rdfs:label xml:lang="en">da</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.p">
+    <rdfs:comment>Pico 10**-12.</rdfs:comment>
+    <rdfs:label xml:lang="en">p</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.f">
+    <rdfs:comment>Femto 10**-15.</rdfs:comment>
+    <rdfs:label xml:lang="en">f</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.micro">
+    <rdfs:comment>Micro 10**-6.</rdfs:comment>
+    <rdfs:label xml:lang="en">micro</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.z">
+    <rdfs:comment>Zepto 10**-21.</rdfs:comment>
+    <rdfs:label xml:lang="en">z</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleRadians.multiplier">
+    <rdfs:domain rdf:resource="#AngleRadians"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.k">
+    <rdfs:comment>Kilo 10**3.</rdfs:comment>
+    <rdfs:label xml:lang="en">k</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.h">
+    <rdfs:comment>Hecto 10**2.</rdfs:comment>
+    <rdfs:label xml:lang="en">h</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Resistance.multiplier">
+    <rdfs:domain rdf:resource="#Resistance"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.P">
+    <rdfs:comment>Peta 10**15.</rdfs:comment>
+    <rdfs:label xml:lang="en">P</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PerCent.multiplier">
+    <rdfs:domain rdf:resource="#PerCent"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RegulatingControl.targetValueUnitMultiplier">
+    <rdfs:comment>Specify the multiplier for used for the targetValue.</rdfs:comment>
+    <rdfs:domain rdf:resource="#RegulatingControl"/>
+    <rdfs:label xml:lang="en">targetValueUnitMultiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.a">
+    <rdfs:comment>Atto 10**-18.</rdfs:comment>
+    <rdfs:label xml:lang="en">a</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.T">
+    <rdfs:comment>Tera 10**12.</rdfs:comment>
+    <rdfs:label xml:lang="en">T</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleDegrees.multiplier">
+    <rdfs:domain rdf:resource="#AngleDegrees"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.c">
+    <rdfs:comment>Centi 10**-2.</rdfs:comment>
+    <rdfs:label xml:lang="en">c</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.Y">
+    <rdfs:comment>Yotta 10**24.</rdfs:comment>
+    <rdfs:label xml:lang="en">Y</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.m">
+    <rdfs:comment>Milli 10**-3.</rdfs:comment>
+    <rdfs:label xml:lang="en">m</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ActivePower.multiplier">
+    <rdfs:domain rdf:resource="#ActivePower"/>
+    <cims:isFixed>M</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitMultiplier.M">
+    <rdfs:comment>Mega 10**6.</rdfs:comment>
+    <rdfs:label xml:lang="en">M</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitMultiplier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RealEnergy.multiplier">
+    <rdfs:domain rdf:resource="#RealEnergy"/>
+    <cims:isFixed>M</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ReactivePower.multiplier">
+    <rdfs:domain rdf:resource="#ReactivePower"/>
+    <cims:isFixed>M</cims:isFixed>
+    <rdfs:label xml:lang="en">multiplier</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitMultiplier"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.ohmPerm">
+    <rdfs:comment>Electric resistance per length in ohms per metre ((V/A)/m).</rdfs:comment>
+    <rdfs:label xml:lang="en">ohmPerm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VArh">
+    <rdfs:comment>Reactive energy in volt ampere reactive hours.</rdfs:comment>
+    <rdfs:label xml:lang="en">VArh</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.mPers2">
+    <rdfs:comment>Acceleration in metres per second squared (m/s²).</rdfs:comment>
+    <rdfs:label xml:lang="en">mPers2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.JPerm3">
+    <rdfs:comment>Energy density, joules per cubic metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">JPerm3</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m3Perkg">
+    <rdfs:comment>Specific volume, cubic metres per kilogram, v.</rdfs:comment>
+    <rdfs:label xml:lang="en">m3Perkg</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m3">
+    <rdfs:comment>Volume in cubic metres (m³).</rdfs:comment>
+    <rdfs:label xml:lang="en">m3</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.dBm">
+    <rdfs:comment>Power level (logarithmic ratio of signal strength , Bel-mW), normalized to 1mW. Note:  multiplier “d” is included in this unit symbol for compatibility with IEC 61850-7-3.</rdfs:comment>
+    <rdfs:label xml:lang="en">dBm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.rotPers">
+    <rdfs:comment>Rotations per second (1/s). See also Hz (1/s).</rdfs:comment>
+    <rdfs:label xml:lang="en">rotPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ApparentPower.unit">
+    <rdfs:domain rdf:resource="#ApparentPower"/>
+    <cims:isFixed>VA</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.mmHg">
+    <rdfs:comment>Pressure, millimetres of mercury (1 mmHg is approximately 133.3 Pa).</rdfs:comment>
+    <rdfs:label xml:lang="en">mmHg</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Wh">
+    <rdfs:comment>Real energy in watt hours.</rdfs:comment>
+    <rdfs:label xml:lang="en">Wh</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.M">
+    <rdfs:comment>Length, nautical miles (1 M = 1852 m).</rdfs:comment>
+    <rdfs:label xml:lang="en">M</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.CPerm3">
+    <rdfs:comment>Electric charge density, coulombs per cubic metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">CPerm3</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.WPerW">
+    <rdfs:comment>Signal Strength, ratio of power.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mW/W’.</rdfs:comment>
+    <rdfs:label xml:lang="en">WPerW</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.ohm">
+    <rdfs:comment>Electric resistance in ohms (V/A).</rdfs:comment>
+    <rdfs:label xml:lang="en">ohm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.l">
+    <rdfs:comment>Volume in litres, litre = dm3 = m3/1000.</rdfs:comment>
+    <rdfs:label xml:lang="en">l</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PU.unit">
+    <rdfs:domain rdf:resource="#PU"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m2Pers">
+    <rdfs:comment>Viscosity in square metres / second (m²/s).</rdfs:comment>
+    <rdfs:label xml:lang="en">m2Pers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Mx">
+    <rdfs:comment>Magnetic flux, maxwells (1 Mx = 10-8 Wb).</rdfs:comment>
+    <rdfs:label xml:lang="en">Mx</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.none">
+    <rdfs:comment>Dimension less quantity, e.g. count, per unit, etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">none</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.A">
+    <rdfs:comment>Current in amperes.</rdfs:comment>
+    <rdfs:label xml:lang="en">A</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.dB">
+    <rdfs:comment>Sound pressure level in decibels. Note:  multiplier “d” is included in this unit symbol for compatibility with IEC 61850-7-3.</rdfs:comment>
+    <rdfs:label xml:lang="en">dB</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.charPers">
+    <rdfs:comment>Data rate (baud) in characters per second.</rdfs:comment>
+    <rdfs:label xml:lang="en">charPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m3Compensated">
+    <rdfs:comment>Volume, cubic metres, with the value compensated for weather effects.</rdfs:comment>
+    <rdfs:label xml:lang="en">m3Compensated</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#RealEnergy.unit">
+    <rdfs:domain rdf:resource="#RealEnergy"/>
+    <cims:isFixed>Wh</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#PerCent.unit">
+    <rdfs:domain rdf:resource="#PerCent"/>
+    <cims:isFixed>none</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.ppm">
+    <rdfs:comment>Concentration in parts per million.</rdfs:comment>
+    <rdfs:label xml:lang="en">ppm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m3Pers">
+    <rdfs:comment>Volumetric flow rate in cubic metres per second (m³/s).</rdfs:comment>
+    <rdfs:label xml:lang="en">m3Pers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Pa">
+    <rdfs:comment>Pressure in pascals (N/m²). Note: the absolute or relative measurement of pressure is implied with this entry. See below for more explicit forms.</rdfs:comment>
+    <rdfs:label xml:lang="en">Pa</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.GyPers">
+    <rdfs:comment>Absorbed dose rate, grays per second.</rdfs:comment>
+    <rdfs:label xml:lang="en">GyPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Wb">
+    <rdfs:comment>Magnetic flux in webers (V·s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Wb</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.cd">
+    <rdfs:comment>Luminous intensity in candelas.</rdfs:comment>
+    <rdfs:label xml:lang="en">cd</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.HzPerHz">
+    <rdfs:comment>Frequency, rate of frequency change.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mHz/Hz’.</rdfs:comment>
+    <rdfs:label xml:lang="en">HzPerHz</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.G">
+    <rdfs:comment>Magnetic flux density, gausses (1 G = 10-4 T).</rdfs:comment>
+    <rdfs:label xml:lang="en">G</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.HzPers">
+    <rdfs:comment>Rate of change of frequency in hertz per second.</rdfs:comment>
+    <rdfs:label xml:lang="en">HzPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.kn">
+    <rdfs:comment>Speed, knots (1 kn = 1852/3600) m/s.</rdfs:comment>
+    <rdfs:label xml:lang="en">kn</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.gal">
+    <rdfs:comment>Volume in gallons, US gallon (1 gal = 231 in3 = 128 fl ounce).</rdfs:comment>
+    <rdfs:label xml:lang="en">gal</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.lx">
+    <rdfs:comment>Illuminance in lux (lm/m²).</rdfs:comment>
+    <rdfs:label xml:lang="en">lx</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.rad">
+    <rdfs:comment>Plane angle in radians (m/m).</rdfs:comment>
+    <rdfs:label xml:lang="en">rad</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.ha">
+    <rdfs:comment>Area, hectares.</rdfs:comment>
+    <rdfs:label xml:lang="en">ha</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.s">
+    <rdfs:comment>Time in seconds.</rdfs:comment>
+    <rdfs:label xml:lang="en">s</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.FPerm">
+    <rdfs:comment>Permittivity, farads per metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">FPerm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.WPerm2sr">
+    <rdfs:comment>Radiance, watts per square metre steradian.</rdfs:comment>
+    <rdfs:label xml:lang="en">WPerm2sr</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Pas">
+    <rdfs:comment>Dynamic viscosity, pascal seconds.</rdfs:comment>
+    <rdfs:label xml:lang="en">Pas</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.molPerkg">
+    <rdfs:comment>Concentration, Molality, the amount of solute in moles and the amount of solvent in kilograms.</rdfs:comment>
+    <rdfs:label xml:lang="en">molPerkg</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.JPerkgK">
+    <rdfs:comment>Specific heat capacity, specific entropy, joules per kilogram Kelvin.</rdfs:comment>
+    <rdfs:label xml:lang="en">JPerkgK</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ActivePower.unit">
+    <rdfs:domain rdf:resource="#ActivePower"/>
+    <cims:isFixed>W</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.katPerm3">
+    <rdfs:comment>Catalytic activity concentration, katals per cubic metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">katPerm3</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.mPerm3">
+    <rdfs:comment>Fuel efficiency in metres per cubic metres (m/m³).</rdfs:comment>
+    <rdfs:label xml:lang="en">mPerm3</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.therm">
+    <rdfs:comment>Energy, therms.</rdfs:comment>
+    <rdfs:label xml:lang="en">therm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.gPerg">
+    <rdfs:comment>Concentration, The ratio of the mass of a solute divided by the mass of  the solution. Note: Users may need use a prefix such a ‘µ’ to express a quantity such as ‘µg/g’.</rdfs:comment>
+    <rdfs:label xml:lang="en">gPerg</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.As">
+    <rdfs:comment>Ampere seconds (A·s).</rdfs:comment>
+    <rdfs:label xml:lang="en">As</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VA">
+    <rdfs:comment>Apparent power in volt amperes. See also real power and reactive power.</rdfs:comment>
+    <rdfs:label xml:lang="en">VA</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.lPerl">
+    <rdfs:comment>Concentration, The ratio of the volume of a solute divided by the volume of  the solution. Note: Users may need use a prefix such a ‘µ’ to express a quantity such as ‘µL/L’.</rdfs:comment>
+    <rdfs:label xml:lang="en">lPerl</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.H">
+    <rdfs:comment>Electric inductance in henrys (Wb/A).</rdfs:comment>
+    <rdfs:label xml:lang="en">H</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.CPerkg">
+    <rdfs:comment>Exposure (x rays), coulombs per kilogram.</rdfs:comment>
+    <rdfs:label xml:lang="en">CPerkg</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.V2">
+    <rdfs:comment>Volt squared (W²/A²).</rdfs:comment>
+    <rdfs:label xml:lang="en">V2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.WPerA">
+    <rdfs:comment>Active power per current flow, watts per Ampere.</rdfs:comment>
+    <rdfs:label xml:lang="en">WPerA</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.JPermolK">
+    <rdfs:comment>Molar entropy, molar heat capacity, joules per mole kelvin.</rdfs:comment>
+    <rdfs:label xml:lang="en">JPermolK</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.A2">
+    <rdfs:comment>Amperes squared (A²).</rdfs:comment>
+    <rdfs:label xml:lang="en">A2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.radPers">
+    <rdfs:comment>Angular velocity in radians per second (rad/s).</rdfs:comment>
+    <rdfs:label xml:lang="en">radPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Voltage.unit">
+    <rdfs:domain rdf:resource="#Voltage"/>
+    <cims:isFixed>V</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.h">
+    <rdfs:comment>Time in hours, hour = 60 min = 3600 s.</rdfs:comment>
+    <rdfs:label xml:lang="en">h</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.N">
+    <rdfs:comment>Force in newtons (kg·m/s²).</rdfs:comment>
+    <rdfs:label xml:lang="en">N</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Bq">
+    <rdfs:comment>Radioactivity in becquerels (1/s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Bq</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m2">
+    <rdfs:comment>Area in square metres (m²).</rdfs:comment>
+    <rdfs:label xml:lang="en">m2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.sPers">
+    <rdfs:comment>Time, Ratio of time.  Note: Users may need to supply a prefix such as ‘&amp;#181;’ to show rates such as ‘&amp;#181;s/s’.</rdfs:comment>
+    <rdfs:label xml:lang="en">sPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.kgPerJ">
+    <rdfs:comment>Weight per energy in kilograms per joule (kg/J). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3.</rdfs:comment>
+    <rdfs:label xml:lang="en">kgPerJ</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.F">
+    <rdfs:comment>Electric capacitance in farads (C/V).</rdfs:comment>
+    <rdfs:label xml:lang="en">F</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.JPermol">
+    <rdfs:comment>Molar energy, joules per mole.</rdfs:comment>
+    <rdfs:label xml:lang="en">JPermol</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.ohmm">
+    <rdfs:comment>Resistivity, ohm metres, (rho).</rdfs:comment>
+    <rdfs:label xml:lang="en">ohmm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.APerA">
+    <rdfs:comment>Current, ratio of amperages.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mA/A’.</rdfs:comment>
+    <rdfs:label xml:lang="en">APerA</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.kat">
+    <rdfs:comment>Catalytic activity, katal = mol / s.</rdfs:comment>
+    <rdfs:label xml:lang="en">kat</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.kg">
+    <rdfs:comment>Mass in kilograms.  Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3.</rdfs:comment>
+    <rdfs:label xml:lang="en">kg</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m3Perh">
+    <rdfs:comment>Volumetric flow rate, cubic metres per hour.</rdfs:comment>
+    <rdfs:label xml:lang="en">m3Perh</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.degC">
+    <rdfs:comment>Relative temperature in degrees Celsius.
+In the SI unit system the symbol is °C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using °C is that the special character ° is difficult to manage in software.</rdfs:comment>
+    <rdfs:label xml:lang="en">degC</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m3Uncompensated">
+    <rdfs:comment>Volume, cubic metres, with the value uncompensated for weather effects.</rdfs:comment>
+    <rdfs:label xml:lang="en">m3Uncompensated</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.cosPhi">
+    <rdfs:comment>Power factor, dimensionless.
+Note 1: This definition of power factor only holds for balanced systems. See the alternative definition under code 153.
+Note 2 : Beware of differing sign conventions in use between the IEC and EEI. It is assumed that the data consumer understands the type of meter in use and the sign convention in use by the utility.</rdfs:comment>
+    <rdfs:label xml:lang="en">cosPhi</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.S">
+    <rdfs:comment>Conductance in siemens.</rdfs:comment>
+    <rdfs:label xml:lang="en">S</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.mPers">
+    <rdfs:comment>Velocity in metres per second (m/s).</rdfs:comment>
+    <rdfs:label xml:lang="en">mPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VPerVAr">
+    <rdfs:comment>Power factor, PF, the ratio of the active power to the apparent power. Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility.</rdfs:comment>
+    <rdfs:label xml:lang="en">VPerVAr</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.J">
+    <rdfs:comment>Energy in joules (N·m = C·V = W·s).</rdfs:comment>
+    <rdfs:label xml:lang="en">J</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.min">
+    <rdfs:comment>Time in minutes, minute  = 60 s.</rdfs:comment>
+    <rdfs:label xml:lang="en">min</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.bar">
+    <rdfs:comment>Pressure in bars, (1 bar = 100 kPa).</rdfs:comment>
+    <rdfs:label xml:lang="en">bar</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VAh">
+    <rdfs:comment>Apparent energy in volt ampere hours.</rdfs:comment>
+    <rdfs:label xml:lang="en">VAh</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ReactivePower.unit">
+    <rdfs:domain rdf:resource="#ReactivePower"/>
+    <cims:isFixed>VAr</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.A2s">
+    <rdfs:comment>Ampere squared time in square amperes (A²s).</rdfs:comment>
+    <rdfs:label xml:lang="en">A2s</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.APerm">
+    <rdfs:comment>A/m, magnetic field strength, amperes per metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">APerm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.A2h">
+    <rdfs:comment>Ampere-squared hour, ampere-squared hour.</rdfs:comment>
+    <rdfs:label xml:lang="en">A2h</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.PaPers">
+    <rdfs:comment>Pressure change rate in pascals per second.</rdfs:comment>
+    <rdfs:label xml:lang="en">PaPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VPerVA">
+    <rdfs:comment>Power factor, PF, the ratio of the active power to the apparent power.  Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility.</rdfs:comment>
+    <rdfs:label xml:lang="en">VPerVA</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.kgm2">
+    <rdfs:comment>Moment of mass in kilogram square metres (kg·m²) (Second moment of mass, commonly called the moment of inertia). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3.</rdfs:comment>
+    <rdfs:label xml:lang="en">kgm2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.WPerm2">
+    <rdfs:comment>Heat flux density, irradiance, watts per square metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">WPerm2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.count">
+    <rdfs:comment>Amount of substance, Counter value.</rdfs:comment>
+    <rdfs:label xml:lang="en">count</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.mol">
+    <rdfs:comment>Amount of substance in moles.</rdfs:comment>
+    <rdfs:label xml:lang="en">mol</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VPerm">
+    <rdfs:comment>Electric field strength, volts per metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">VPerm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.T">
+    <rdfs:comment>Magnetic flux density in teslas (Wb/m2).</rdfs:comment>
+    <rdfs:label xml:lang="en">T</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleRadians.unit">
+    <rdfs:domain rdf:resource="#AngleRadians"/>
+    <cims:isFixed>rad</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Vh">
+    <rdfs:comment>Volt-hour, Volt hours.</rdfs:comment>
+    <rdfs:label xml:lang="en">Vh</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VAr">
+    <rdfs:comment>Reactive power in volt amperes reactive. The “reactive” or “imaginary” component of electrical power (VIsin(phi)). (See also real power and apparent power).
+Note: Different meter designs use different methods to arrive at their results. Some meters may compute reactive power as an arithmetic value, while others compute the value vectorially. The data consumer should determine the method in use and the suitability of the measurement for the intended purpose.</rdfs:comment>
+    <rdfs:label xml:lang="en">VAr</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.sr">
+    <rdfs:comment>Solid angle in steradians (m2/m2).</rdfs:comment>
+    <rdfs:label xml:lang="en">sr</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.lPers">
+    <rdfs:comment>Volumetric flow rate in litres per second.</rdfs:comment>
+    <rdfs:label xml:lang="en">lPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.C">
+    <rdfs:comment>Electric charge in coulombs (A·s).</rdfs:comment>
+    <rdfs:label xml:lang="en">C</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.lPerh">
+    <rdfs:comment>Volumetric flow rate, litres per hour.</rdfs:comment>
+    <rdfs:label xml:lang="en">lPerh</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.JPerkg">
+    <rdfs:comment>Specific energy, Joules / kg.</rdfs:comment>
+    <rdfs:label xml:lang="en">JPerkg</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.m">
+    <rdfs:comment>Length in metres.</rdfs:comment>
+    <rdfs:label xml:lang="en">m</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.anglesec">
+    <rdfs:comment>Plane angle, seconds.</rdfs:comment>
+    <rdfs:label xml:lang="en">anglesec</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.KPers">
+    <rdfs:comment>Temperature change rate in kelvins per second.</rdfs:comment>
+    <rdfs:label xml:lang="en">KPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#CurrentFlow.unit">
+    <rdfs:domain rdf:resource="#CurrentFlow"/>
+    <cims:isFixed>A</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Oe">
+    <rdfs:comment>Magnetic field in oersteds, (1 Oe = (103/4p) A/m).</rdfs:comment>
+    <rdfs:label xml:lang="en">Oe</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.JPers">
+    <rdfs:comment>Energy rate in joules per second (J/s).</rdfs:comment>
+    <rdfs:label xml:lang="en">JPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.anglemin">
+    <rdfs:comment>Plane angle, minutes.</rdfs:comment>
+    <rdfs:label xml:lang="en">anglemin</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Resistance.unit">
+    <rdfs:domain rdf:resource="#Resistance"/>
+    <cims:isFixed>ohm</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.WPers">
+    <rdfs:comment>Ramp rate in watts per second.</rdfs:comment>
+    <rdfs:label xml:lang="en">WPers</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.deg">
+    <rdfs:comment>Plane angle in degrees.</rdfs:comment>
+    <rdfs:label xml:lang="en">deg</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.WPermK">
+    <rdfs:comment>Thermal conductivity in watt/metres kelvin.</rdfs:comment>
+    <rdfs:label xml:lang="en">WPermK</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Vs">
+    <rdfs:comment>Volt seconds (Ws/A).</rdfs:comment>
+    <rdfs:label xml:lang="en">Vs</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.lm">
+    <rdfs:comment>Luminous flux in lumens (cd·sr).</rdfs:comment>
+    <rdfs:label xml:lang="en">lm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Sv">
+    <rdfs:comment>Dose equivalent in sieverts (J/kg).</rdfs:comment>
+    <rdfs:label xml:lang="en">Sv</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#AngleDegrees.unit">
+    <rdfs:domain rdf:resource="#AngleDegrees"/>
+    <cims:isFixed>deg</cims:isFixed>
+    <rdfs:label xml:lang="en">unit</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#UnitSymbol"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.tonne">
+    <rdfs:comment>Mass in tons, “tonne” or “metric  ton” (1000 kg = 1 Mg).</rdfs:comment>
+    <rdfs:label xml:lang="en">tonne</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.W">
+    <rdfs:comment>Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&amp;#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power.</rdfs:comment>
+    <rdfs:label xml:lang="en">W</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.V">
+    <rdfs:comment>Electric potential in volts (W/A).</rdfs:comment>
+    <rdfs:label xml:lang="en">V</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.ft3">
+    <rdfs:comment>Volume, cubic feet.</rdfs:comment>
+    <rdfs:label xml:lang="en">ft3</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Ah">
+    <rdfs:comment>Ampere-hours, ampere-hours.</rdfs:comment>
+    <rdfs:label xml:lang="en">Ah</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Gy">
+    <rdfs:comment>Absorbed dose in grays (J/kg).</rdfs:comment>
+    <rdfs:label xml:lang="en">Gy</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.character">
+    <rdfs:comment>Number of characters.</rdfs:comment>
+    <rdfs:label xml:lang="en">character</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.d">
+    <rdfs:comment>Time in days, day = 24 h = 86400 s.</rdfs:comment>
+    <rdfs:label xml:lang="en">d</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.WPersr">
+    <rdfs:comment>Radiant intensity, watts per steradian.</rdfs:comment>
+    <rdfs:label xml:lang="en">WPersr</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.SPerm">
+    <rdfs:comment>Conductance per length (F/m).</rdfs:comment>
+    <rdfs:label xml:lang="en">SPerm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VPerHz">
+    <rdfs:comment>Magnetic flux in volt per hertz.</rdfs:comment>
+    <rdfs:label xml:lang="en">VPerHz</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Hz">
+    <rdfs:comment>Frequency in hertz (1/s).</rdfs:comment>
+    <rdfs:label xml:lang="en">Hz</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.onePerHz">
+    <rdfs:comment>Reciprocal of frequency (1/Hz).</rdfs:comment>
+    <rdfs:label xml:lang="en">onePerHz</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.K">
+    <rdfs:comment>Temperature in kelvins.</rdfs:comment>
+    <rdfs:label xml:lang="en">K</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.molPerm3">
+    <rdfs:comment>Concentration, The amount of substance concentration, (c), the amount of solvent in moles divided by the volume of solution in m³.</rdfs:comment>
+    <rdfs:label xml:lang="en">molPerm3</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.kgm">
+    <rdfs:comment>Moment of mass in kilogram metres (kg·m) (first moment of mass). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3.</rdfs:comment>
+    <rdfs:label xml:lang="en">kgm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.HPerm">
+    <rdfs:comment>Permeability, henrys per metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">HPerm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.V2h">
+    <rdfs:comment>Volt-squared hour, volt-squared-hours.</rdfs:comment>
+    <rdfs:label xml:lang="en">V2h</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.CPerm2">
+    <rdfs:comment>Surface charge density, coulombs per square metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">CPerm2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.JPerK">
+    <rdfs:comment>Heat capacity in joules/kelvin.</rdfs:comment>
+    <rdfs:label xml:lang="en">JPerK</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.radPers2">
+    <rdfs:comment>Angular acceleration, radians per second squared.</rdfs:comment>
+    <rdfs:label xml:lang="en">radPers2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.rev">
+    <rdfs:comment>Amount of rotation, revolutions.</rdfs:comment>
+    <rdfs:label xml:lang="en">rev</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.onePerm">
+    <rdfs:comment>Wavenumber, reciprocal metres,  (1/m).</rdfs:comment>
+    <rdfs:label xml:lang="en">onePerm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.VPerV">
+    <rdfs:comment>Voltage, ratio of voltages.  Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mV/V’.</rdfs:comment>
+    <rdfs:label xml:lang="en">VPerV</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Q">
+    <rdfs:comment>Quantity power, Q.</rdfs:comment>
+    <rdfs:label xml:lang="en">Q</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.NPerm">
+    <rdfs:comment>Surface tension, newton per metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">NPerm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Nm">
+    <rdfs:comment>Moment of force, newton metres.</rdfs:comment>
+    <rdfs:label xml:lang="en">Nm</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Btu">
+    <rdfs:comment>Energy, British Thermal Units.</rdfs:comment>
+    <rdfs:label xml:lang="en">Btu</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.molPermol">
+    <rdfs:comment>Concentration, Molar fraction, the ratio of the molar amount of a solute divided by the molar amount of the solution.</rdfs:comment>
+    <rdfs:label xml:lang="en">molPermol</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.kgPerm3">
+    <rdfs:comment>Density in kilogram/cubic metres (kg/m³). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3.</rdfs:comment>
+    <rdfs:label xml:lang="en">kgPerm3</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.Qh">
+    <rdfs:comment>Quantity energy, Qh.</rdfs:comment>
+    <rdfs:label xml:lang="en">Qh</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#UnitSymbol.JPerm2">
+    <rdfs:comment>Insulation energy density, joules per square metre or watt second per square metre.</rdfs:comment>
+    <rdfs:label xml:lang="en">JPerm2</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#UnitSymbol"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsPpccControlKind.phasePcc">
+    <rdfs:comment>Control is phase at point of common coupling. Target is provided by VsConverter.targetPhasePcc.</rdfs:comment>
+    <rdfs:label xml:lang="en">phasePcc</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsPpccControlKind.pPccAndUdcDroopPilot">
+    <rdfs:comment>Control is active power at point of common coupling and the pilot DC voltage, with the droop. The mode is used for Multi Terminal High Voltage DC (MTDC) systems where multiple HVDC Substations are connected to the HVDC transmission lines. The pilot voltage is then used to coordinate the control the DC voltage across the HVDC substations. Targets are provided by ACDCConverter.targetPpcc, ACDCConverter.targetUdc and  VsConverter.droop.</rdfs:comment>
+    <rdfs:label xml:lang="en">pPccAndUdcDroopPilot</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsPpccControlKind.pPccAndUdcDroopWithCompensation">
+    <rdfs:comment>Control is active power at point of common coupling and compensated DC voltage, with the droop. Compensation factor is the resistance, as an approximation of the DC voltage of a common (real or virtual) node in the DC network. Targets are provided by ACDCConverter.targetPpcc, ACDCConverter.targetUdc, VsConverter.droop and VsConverter.droopCompensation.</rdfs:comment>
+    <rdfs:label xml:lang="en">pPccAndUdcDroopWithCompensation</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsPpccControlKind.udc">
+    <rdfs:comment>Control is DC voltage  with target value provided by ACDCConverter.targetUdc.</rdfs:comment>
+    <rdfs:label xml:lang="en">udc</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsPpccControlKind.pPccAndUdcDroop">
+    <rdfs:comment>Control is active power at point of common coupling and local DC voltage, with the droop. Target values are provided by ACDCConverter.targetPpcc, ACDCConverter.targetUdc and VsConverter.droop.</rdfs:comment>
+    <rdfs:label xml:lang="en">pPccAndUdcDroop</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsPpccControlKind.pPcc">
+    <rdfs:comment>Control is real power at point of common coupling. The target value is provided by ACDCConverter.targetPpcc.</rdfs:comment>
+    <rdfs:label xml:lang="en">pPcc</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsPpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsQpccControlKind.reactivePcc">
+    <rdfs:comment>Control is reactive power at point of common coupling. Target is provided by VsConverter.targetQpcc.</rdfs:comment>
+    <rdfs:label xml:lang="en">reactivePcc</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsQpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsQpccControlKind.pulseWidthModulation">
+    <rdfs:comment>No explicit control. Pulse-modulation factor is directly set in magnitude (VsConverter.targetPWMfactor) and phase (VsConverter.targetPhasePcc).</rdfs:comment>
+    <rdfs:label xml:lang="en">pulseWidthModulation</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsQpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsQpccControlKind.voltagePcc">
+    <rdfs:comment>Control is voltage at point of common coupling. Target is provided by VsConverter.targetUpcc.</rdfs:comment>
+    <rdfs:label xml:lang="en">voltagePcc</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsQpccControlKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#VsQpccControlKind.powerFactorPcc">
+    <rdfs:comment>Control is power factor at point of common coupling. Target is provided by VsConverter.targetPowerFactorPcc.</rdfs:comment>
+    <rdfs:label xml:lang="en">powerFactorPcc</rdfs:label>
+    <cims:stereotype>enum</cims:stereotype>
+    <rdf:type rdf:resource="#VsQpccControlKind"/>
+  </rdf:Description>
+</rdf:RDF>

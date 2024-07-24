@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+xmlns:cim="http://iec.ch/TC57/CIM100#"
+xmlns:cims="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#"
+xmlns:dc="http://purl.org/dc/elements/1.1/#"
+xmlns:dcat="http://www.w3.org/ns/dcat#"
+xmlns:dcterms="http://purl.org/dc/terms/#"
+xmlns:eu="http://iec.ch/TC57/CIM100-European#"
+xmlns:owl="http://www.w3.org/2002/07/owl#"
+xmlns:prof="http://www.w3.org/ns/dx/prof/#"
+xmlns:profcim="http://iec.ch/TC57/ns/CIM/prof-cim#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+xmlns:sh="http://www.w3.org/ns/shacl#"
+xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#"
+xmlns:dm="http://iec.ch/TC57/61970-552/DifferenceModel/1#"
+xmlns:prov="http://www.w3.org/ns/prov#"
+xmlns:gb="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#"
+xmlns:nc="http://entsoe.eu/ns/nc#"
+xmlns:gldev="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#"
+xml:base ="http://iec.ch/TC57/CIM100"
+>
+<!--  ********** Header **************** -->
+<!-- RDFS header -->
+<rdf:Description rdf:about = "http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Ontology">
+	<dcat:keyword>GLdev</dcat:keyword>
+	<dcat:theme xml:lang ="en">vocabulary</dcat:theme>
+	<owl:versionIRI rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL/1.0"/>
+	<dcterms:conformsTo>urn:iso:std:iec:61970-600-2:ed-1</dcterms:conformsTo>
+	<dcterms:conformsTo>urn:iso:std:iec:61970-301:ed-7:amd1</dcterms:conformsTo>
+	<dcterms:conformsTo>file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap</dcterms:conformsTo>
+	<dcterms:conformsTo>urn:iso:std:iec:61970-401:draft:ed-1</dcterms:conformsTo>
+	<dcterms:conformsTo>urn:iso:std:iec:61970-501:draft:ed-2</dcterms:conformsTo>
+	<owl:versionInfo xml:lang ="en">1.0.0</owl:versionInfo>
+	<dcterms:creator xml:lang ="en">Ofgem LTDS WG</dcterms:creator>
+	<dcterms:description xml:lang ="en">This vocabulary is describing the LTDS Deviation Geographical Location profile. </dcterms:description>
+	<dcterms:identifier>urn:uuid:862c1230-be19-4a01-bd6f-1a6c03d213ff</dcterms:identifier>
+	<dcterms:language>en-GB</dcterms:language>
+	<dcterms:license xml:lang ="en">https://www.apache.org/licenses/LICENSE-2.0</dcterms:license>
+	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-06-26</dcterms:modified>
+	<dcterms:publisher xml:lang ="en">Ofgem</dcterms:publisher>
+	<dcterms:rightsHolder xml:lang ="en">Ofgem</dcterms:rightsHolder>
+	<dcterms:title xml:lang ="en">LTDS Deviation Geographical Location Vocabulary</dcterms:title>
+<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+</rdf:Description >
+<!-- ******************************** -->
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSdeviationCGMESGeographicalLocationProfile">
+	<rdfs:label xml:lang="en">LTDSdeviationCGMESGeographicalLocationProfile</rdfs:label>
+	<rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The LTDS Deviation Geographical Location profile defines deviations from the CGMES Geographical Location profile.</rdfs:comment>
+</rdf:Description>
+	 <rdf:Description rdf:about="#Location">
+	<rdfs:label xml:lang="en">Location</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system.</rdfs:comment>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSdeviationCGMESGeographicalLocationProfile"/>
+	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://iec.ch/TC57/CIM100#Location.mainAddress">
+	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+	<rdfs:label xml:lang="en">mainAddress</rdfs:label>
+	<rdfs:domain rdf:resource="#Location"/>
+	<cims:dataType rdf:resource="#StreetAddress"/>
+	<cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1" />
+	<cims:stereotype>LTDSnotDefined</cims:stereotype>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Main address of the location.</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="#StreetAddress">
+	<rdfs:label xml:lang="en">StreetAddress</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">General purpose street and postal address information.</rdfs:comment>
+<cims:stereotype>Compound</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSnotDefined"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile">
+	<rdfs:label xml:lang="en">DocLTDSdeviationCGMESGeographicalLocationProfile</rdfs:label>
+	<rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This package contains two types of information:
+&lt;ul&gt;
+	&lt;li&gt;A list of classes present in the CGMES profile, but not used by LTDS  &lt;/li&gt;
+	&lt;li&gt;The datatypes (enumerations, CIMDatatypes, primitives) that are not used by LTDS (and do not need to be printed in documentation) but are needed to support profile definition.&lt;/li&gt;
+&lt;/ul&gt;</rdfs:comment>
+</rdf:Description>
+	 <rdf:Description rdf:about="#Boolean">
+	<rdfs:label xml:lang="en">Boolean</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type with the value space &quot;true&quot; and &quot;false&quot;.</rdfs:comment>
+<cims:stereotype>Primitive</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="#Date">
+	<rdfs:label xml:lang="en">Date</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date as &quot;yyyy-mm-dd&quot;, which conforms with ISO 8601. UTC time zone is specified as &quot;yyyy-mm-ddZ&quot;. A local timezone relative UTC is specified as &quot;yyyy-mm-dd(+/-)hh:mm&quot;.</rdfs:comment>
+<cims:stereotype>Primitive</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="#DateTime">
+	<rdfs:label xml:lang="en">DateTime</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date and time as &quot;yyyy-mm-ddThh:mm:ss.sss&quot;, which conforms with ISO 8601. UTC time zone is specified as &quot;yyyy-mm-ddThh:mm:ss.sssZ&quot;. A local timezone relative UTC is specified as &quot;yyyy-mm-ddThh:mm:ss.sss-hh:mm&quot;. The second component (shown here as &quot;ss.sss&quot;) could have any number of digits in its fractional part to allow any kind of precision beyond seconds.</rdfs:comment>
+<cims:stereotype>Primitive</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#IRI">
+	<rdfs:label xml:lang="en">IRI</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.
+The primitive is serialized as rdf:resource in RDFXML.
+IRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.
+IRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.
+IRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names.</rdfs:comment>
+<cims:stereotype>Primitive</cims:stereotype>
+<cims:stereotype>profcim</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="#String">
+	<rdfs:label xml:lang="en">String</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.</rdfs:comment>
+<cims:stereotype>Primitive</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#StringFixedLanguage">
+	<rdfs:label xml:lang="en">StringFixedLanguage</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.
+The primitive is serialized as literal without language support.</rdfs:comment>
+<cims:stereotype>Primitive</cims:stereotype>
+<cims:stereotype>profcim</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#StringIRI">
+	<rdfs:label xml:lang="en">StringIRI</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.
+The primitive is serialized as literal without language support.
+IRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.
+IRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.
+IRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names.</rdfs:comment>
+<cims:stereotype>Primitive</cims:stereotype>
+<cims:stereotype>profcim</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#URL">
+	<rdfs:label xml:lang="en">URL</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications.</rdfs:comment>
+<cims:stereotype>Primitive</cims:stereotype>
+<cims:stereotype>profcim</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_DocLTDSdeviationCGMESGeographicalLocationProfile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSnotDefined">
+	<rdfs:label xml:lang="en">LTDSnotDefined</rdfs:label>
+	<rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This package contains classes that are included in CGMES but are not defined in LTDS.</rdfs:comment>
+</rdf:Description>
+	 <rdf:Description rdf:about="#ServiceLocation">
+	<rdfs:label xml:lang="en">ServiceLocation</rdfs:label>
+	<rdfs:subClassOf rdf:resource="#WorkLocation"/>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A real estate location, commonly referred to as premises.</rdfs:comment>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSnotDefined"/>
+	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="#Status">
+	<rdfs:label xml:lang="en">Status</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Current status information relevant to an entity.</rdfs:comment>
+<cims:stereotype>Compound</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSnotDefined"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="#StreetDetail">
+	<rdfs:label xml:lang="en">StreetDetail</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Street details, in the context of address.</rdfs:comment>
+<cims:stereotype>Compound</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSnotDefined"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="#TownDetail">
+	<rdfs:label xml:lang="en">TownDetail</rdfs:label>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Town details, in the context of address.</rdfs:comment>
+<cims:stereotype>Compound</cims:stereotype>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSnotDefined"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+	 <rdf:Description rdf:about="#WorkLocation">
+	<rdfs:label xml:lang="en">WorkLocation</rdfs:label>
+	<rdfs:subClassOf rdf:resource="#Location"/>
+	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information about a particular location for various forms of work.</rdfs:comment>
+	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationGL#Package_LTDSnotDefined"/>
+	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+	 </rdf:Description>
+</rdf:RDF>

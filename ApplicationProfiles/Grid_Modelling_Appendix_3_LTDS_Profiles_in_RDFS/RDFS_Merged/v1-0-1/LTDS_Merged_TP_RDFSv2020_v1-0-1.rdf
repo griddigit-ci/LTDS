@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:tp="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#"
+    xmlns:eu="http://iec.ch/TC57/CIM100-European#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:profcim="http://iec.ch/TC57/ns/CIM/prof-cim#"
+    xmlns:cims="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:cim="http://iec.ch/TC57/CIM100#"
+    xmlns:dcterms="http://purl.org/dc/terms/#"
+  xml:base="http://iec.ch/TC57/CIM100" > 
+  <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Ontology">
+    <dcterms:conformsTo>file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap</dcterms:conformsTo>
+    <dcterms:conformsTo>urn:iso:std:iec:61970-600-2:ed-1</dcterms:conformsTo>
+    <dcterms:conformsTo>urn:iso:std:iec:61970-301:ed-7:amd1</dcterms:conformsTo>
+    <dcterms:conformsTo>urn:iso:std:iec:61970-401:draft:ed-1</dcterms:conformsTo>
+    <dcterms:conformsTo>urn:iso:std:iec:61970-501:draft:ed-2</dcterms:conformsTo>
+    <dcterms:creator xml:lang="en">Ofgem LTDS WG</dcterms:creator>
+    <dcterms:description xml:lang="en">This vocabulary is describing the LTDS topology profile.</dcterms:description>
+    <dcterms:identifier>urn:uuid:6ad476f5-f668-47a0-b3c5-33b5d0623828</dcterms:identifier>
+    <dcat:keyword>TP</dcat:keyword>
+    <dcterms:language>en-GB</dcterms:language>
+    <dcterms:license xml:lang="en">https://www.apache.org/licenses/LICENSE-2.0</dcterms:license>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-18</dcterms:modified>
+    <dcterms:publisher xml:lang="en">Ofgem</dcterms:publisher>
+    <dcterms:rightsHolder xml:lang="en">Ofgem</dcterms:rightsHolder>
+    <dcat:theme xml:lang="en">vocabulary</dcat:theme>
+    <dcterms:title xml:lang="en">LTDS Topology Vocabulary</dcterms:title>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology/1.0"/>
+    <owl:versionInfo xml:lang="en">1.0.1</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BaseVoltage">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>Defines a system base voltage which is referenced. </rdfs:comment>
+    <rdfs:label xml:lang="en">BaseVoltage</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#BaseVoltage.TopologicalNode">
+    <cims:AssociationUsed>No</cims:AssociationUsed>
+    <rdfs:comment>The topological nodes at the base voltage.</rdfs:comment>
+    <rdfs:domain rdf:resource="#BaseVoltage"/>
+    <cims:inverseRoleName rdf:resource="#TopologicalNode.BaseVoltage"/>
+    <rdfs:label xml:lang="en">TopologicalNode</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+    <rdfs:range rdf:resource="#TopologicalNode"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ConnectivityNode">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>Connectivity nodes are points where terminals of AC conducting equipment are connected together with zero impedance.</rdfs:comment>
+    <rdfs:label xml:lang="en">ConnectivityNode</rdfs:label>
+    <cims:stereotype>Description</cims:stereotype>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ConnectivityNode.TopologicalNode">
+    <cims:AssociationUsed>Yes</cims:AssociationUsed>
+    <rdfs:comment>The topological node to which this connectivity node is assigned.  May depend on the current state of switches in the network.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ConnectivityNode"/>
+    <cims:inverseRoleName rdf:resource="#TopologicalNode.ConnectivityNodes"/>
+    <rdfs:label xml:lang="en">TopologicalNode</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdfs:range rdf:resource="#TopologicalNode"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ConnectivityNodeContainer">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>A base class for all objects that may contain connectivity nodes or topological nodes.</rdfs:comment>
+    <rdfs:label xml:lang="en">ConnectivityNodeContainer</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ConnectivityNodeContainer.TopologicalNode">
+    <cims:AssociationUsed>No</cims:AssociationUsed>
+    <rdfs:comment>The topological nodes which belong to this connectivity node container.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ConnectivityNodeContainer"/>
+    <cims:inverseRoleName rdf:resource="#TopologicalNode.ConnectivityNodeContainer"/>
+    <rdfs:label xml:lang="en">TopologicalNode</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+    <rdfs:range rdf:resource="#TopologicalNode"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#Date">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>Date as "yyyy-mm-dd", which conforms with ISO 8601. UTC time zone is specified as "yyyy-mm-ddZ". A local timezone relative UTC is specified as "yyyy-mm-dd(+/-)hh:mm".</rdfs:comment>
+    <rdfs:label xml:lang="en">Date</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#DateTime">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>Date and time as "yyyy-mm-ddThh:mm:ss.sss", which conforms with ISO 8601. UTC time zone is specified as "yyyy-mm-ddThh:mm:ss.sssZ". A local timezone relative UTC is specified as "yyyy-mm-ddThh:mm:ss.sss-hh:mm". The second component (shown here as "ss.sss") could have any number of digits in its fractional part to allow any kind of precision beyond seconds.</rdfs:comment>
+    <rdfs:label xml:lang="en">DateTime</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#IRI">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.
+The primitive is serialized as rdf:resource in RDFXML.
+IRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.
+IRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.
+IRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names.</rdfs:comment>
+    <rdfs:label xml:lang="en">IRI</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <cims:stereotype>profcim</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>This is a root class to provide common identification for all classes needing identification and naming attributes.</rdfs:comment>
+    <rdfs:label xml:lang="en">IdentifiedObject</rdfs:label>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject.description">
+    <rdfs:comment>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</rdfs:comment>
+    <cims:dataType rdf:resource="#String"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <rdfs:label xml:lang="en">description</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/CIM100-European#IdentifiedObject.energyIdentCodeEic">
+    <rdfs:comment>The attribute is used for an exchange of the EIC code (Energy identification Code). The length of the string is 16 characters as defined by the EIC code. For details on EIC scheme please refer to ENTSO-E web site.</rdfs:comment>
+    <cims:dataType rdf:resource="#String"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <rdfs:label xml:lang="en">energyIdentCodeEic</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <cims:stereotype>European</cims:stereotype>
+    <cims:stereotype>deprecated</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject.mRID">
+    <rdfs:comment>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
+For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</rdfs:comment>
+    <cims:dataType rdf:resource="#String"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <rdfs:label xml:lang="en">mRID</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#IdentifiedObject.name">
+    <rdfs:comment>The name is any free human readable and possibly non unique text naming the object.</rdfs:comment>
+    <cims:dataType rdf:resource="#String"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <rdfs:label xml:lang="en">name</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/CIM100-European#IdentifiedObject.shortName">
+    <rdfs:comment>The attribute is used for an exchange of a human readable short name with length of the string 12 characters maximum.</rdfs:comment>
+    <cims:dataType rdf:resource="#String"/>
+    <rdfs:domain rdf:resource="#IdentifiedObject"/>
+    <rdfs:label xml:lang="en">shortName</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
+    <cims:stereotype>European</cims:stereotype>
+    <cims:stereotype>deprecated</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile">
+    <rdfs:comment>This is a package for the TP profile.</rdfs:comment>
+    <rdfs:label xml:lang="en">TPProfile</rdfs:label>
+    <rdf:type rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#ClassCategory"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ReportingGroup">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>A reporting group is used for various ad-hoc groupings used for reporting.</rdfs:comment>
+    <rdfs:label xml:lang="en">ReportingGroup</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#ReportingGroup.TopologicalNode">
+    <cims:AssociationUsed>No</cims:AssociationUsed>
+    <rdfs:comment>The topological nodes that belong to the reporting group.</rdfs:comment>
+    <rdfs:domain rdf:resource="#ReportingGroup"/>
+    <cims:inverseRoleName rdf:resource="#TopologicalNode.ReportingGroup"/>
+    <rdfs:label xml:lang="en">TopologicalNode</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+    <rdfs:range rdf:resource="#TopologicalNode"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#String">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.</rdfs:comment>
+    <rdfs:label xml:lang="en">String</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#StringFixedLanguage">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>A string consisting of a sequence of characters. The character encoding is UTF-8. The string length is unspecified and unlimited.
+The primitive is serialized as literal without language support.</rdfs:comment>
+    <rdfs:label xml:lang="en">StringFixedLanguage</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <cims:stereotype>profcim</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#StringIRI">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>An IRI (Internationalized Resource Identifier) within an RDF graph is a Unicode string that conforms to the syntax defined in RFC 3987.
+The primitive is serialized as literal without language support.
+IRIs in the RDF abstract syntax must be absolute, and may contain a fragment identifier.
+IRI equality: Two IRIs are equal if and only if they are equivalent under Simple String Comparison according to section 5.1 of [RFC3987]. Further normalization must not be performed when comparing IRIs for equality.
+IRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicode characters. Every absolute URI and URL is an IRI, but not every IRI is an URI. When IRIs are used in operations that are only defined for URIs, they must first be converted according to the mapping defined in section 3.1 of [RFC3987]. A notable example is retrieval over the HTTP protocol. The mapping involves UTF-8 encoding of non-ASCII characters, %-encoding of octets not allowed in URIs, and Punycode-encoding of domain names.</rdfs:comment>
+    <rdfs:label xml:lang="en">StringIRI</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <cims:stereotype>profcim</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TopologicalNode">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>For a detailed substation model a topological node is a set of connectivity nodes that, in the current network state, are connected together through any type of closed switches, including  jumpers. Topological nodes change as the current network state changes (i.e., switches, breakers, etc. change state).
+For a planning model, switch statuses are not used to form topological nodes. Instead they are manually created or deleted in a model builder tool. Topological nodes maintained this way are also called "busses".</rdfs:comment>
+    <rdfs:label xml:lang="en">TopologicalNode</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#IdentifiedObject"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TopologicalNode.BaseVoltage">
+    <cims:AssociationUsed>Yes</cims:AssociationUsed>
+    <rdfs:comment>The base voltage of the topological node.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TopologicalNode"/>
+    <cims:inverseRoleName rdf:resource="#BaseVoltage.TopologicalNode"/>
+    <rdfs:label xml:lang="en">BaseVoltage</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
+    <rdfs:range rdf:resource="#BaseVoltage"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TopologicalNode.ConnectivityNodeContainer">
+    <cims:AssociationUsed>Yes</cims:AssociationUsed>
+    <rdfs:comment>The connectivity node container to which the topological node belongs.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TopologicalNode"/>
+    <cims:inverseRoleName rdf:resource="#ConnectivityNodeContainer.TopologicalNode"/>
+    <rdfs:label xml:lang="en">ConnectivityNodeContainer</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1"/>
+    <rdfs:range rdf:resource="#ConnectivityNodeContainer"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TopologicalNode.ConnectivityNodes">
+    <cims:AssociationUsed>No</cims:AssociationUsed>
+    <rdfs:comment>The connectivity nodes combine together to form this topological node.  May depend on the current state of switches in the network.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TopologicalNode"/>
+    <cims:inverseRoleName rdf:resource="#ConnectivityNode.TopologicalNode"/>
+    <rdfs:label xml:lang="en">ConnectivityNodes</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..n"/>
+    <rdfs:range rdf:resource="#ConnectivityNode"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#TopologicalNode.ReportingGroup">
+    <cims:AssociationUsed>Yes</cims:AssociationUsed>
+    <rdfs:comment>The reporting group to which the topological node belongs.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TopologicalNode"/>
+    <cims:inverseRoleName rdf:resource="#ReportingGroup.TopologicalNode"/>
+    <rdfs:label xml:lang="en">ReportingGroup</rdfs:label>
+    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
+    <rdfs:range rdf:resource="#ReportingGroup"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://iec.ch/TC57/ns/CIM/prof-cim#URL">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/Topology#Package_TPProfile"/>
+    <rdfs:comment>A Uniform Resource Locator (URL), colloquially termed a web address, is a reference to a web resource that specifies its location on a computer network and a mechanism for retrieving it. A URL is a specific type of Uniform Resource Identifier (URI), although many people use the two terms interchangeably.URLs occur most commonly to reference web pages (http), but are also used for file transfer (ftp), email (mailto), database access (JDBC), and many other applications.</rdfs:comment>
+    <rdfs:label xml:lang="en">URL</rdfs:label>
+    <cims:stereotype>Primitive</cims:stereotype>
+    <cims:stereotype>profcim</cims:stereotype>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+</rdf:RDF>
