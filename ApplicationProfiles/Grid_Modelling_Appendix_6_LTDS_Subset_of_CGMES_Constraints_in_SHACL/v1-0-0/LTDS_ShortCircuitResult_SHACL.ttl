@@ -1,0 +1,419 @@
+@base          <http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuitResults/Constraints> .
+@prefix cim:     <http://iec.ch/TC57/CIM100#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dash:    <http://datashapes.org/dash#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix dm:      <http://iec.ch/TC57/61970-552/DifferenceModel/1#> .
+@prefix eu:      <http://iec.ch/TC57/CIM100-European#> .
+@prefix gb:      <http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#> .
+@prefix ido:     <http://iec.ch/TC57/ns/CIM/IdentifiedObject/constraints/3.0#> .
+@prefix md:      <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
+@prefix nc:      <http://entsoe.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prof:    <http://www.w3.org/ns/dx/prof/#> .
+@prefix profcim: <http://iec.ch/TC57/ns/CIM/prof-cim#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix scr:     <http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuitResults/Constraints#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+scr:StateShortCircuitResult.initialSymmetricalPower-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "StateShortCircuitResult.initialSymmetricalPower-cardinality";
+        sh:order        4;
+        sh:path         gb:StateShortCircuitResult.initialSymmetricalPower;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.initialSymmetricalCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "StateShortCircuitResult.initialSymmetricalCurrent-cardinality";
+        sh:order        6;
+        sh:path         gb:StateShortCircuitResult.initialSymmetricalCurrent;
+        sh:severity     sh:Violation .
+
+scr:ShortCircuitResult.symmetricalBreakingCurrentAngle-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "ShortCircuitResult.symmetricalBreakingCurrentAngle-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        11;
+        sh:path         gb:ShortCircuitResult.symmetricalBreakingCurrentAngle;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.mRID-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.mRID-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.mRID;
+        sh:severity     sh:Violation .
+
+scr:ShortCircuitResult.peakCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "ShortCircuitResult.peakCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        9;
+        sh:path         gb:ShortCircuitResult.peakCurrent;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult
+        rdf:type        sh:NodeShape;
+        sh:property     scr:StateShortCircuitResult.phase-datatype , scr:ShortCircuitResult.symmetricalBreakingCurrentAngle-cardinality , ido:IdentifiedObject.mRID-datatype , scr:StateShortCircuitResult.initialSymmetricalCurrent-datatype , scr:StateShortCircuitResult.steadyStateCurrent-cardinality , ido:IdentifiedObject.name-datatype , scr:StateShortCircuitResult.initialSymmetricalPower-cardinality , scr:StateShortCircuitResult.decayingComponentCurrent-datatype , scr:ShortCircuitResult.symmetricalBreakingCurrent-datatype , scr:StateShortCircuitResult.phase-cardinality , scr:StateShortCircuitResult.minSteadyStateCurrent-cardinality , ido:IdentifiedObject.mRID-cardinality , scr:ShortCircuitResult.symmetricalBreakingCurrentAngle-datatype , scr:StateShortCircuitResult.Terminal-valueType , scr:ShortCircuitResult.faultKind-cardinality , scr:ShortCircuitResult.peakCurrent-cardinality , scr:StateShortCircuitResult.Terminal-cardinality , scr:StateShortCircuitResult.maxSteadyStateCurrent-datatype , scr:StateShortCircuitResult.initialSymmetricalPower-datatype , ido:IdentifiedObject.name-cardinality , scr:StateShortCircuitResult.steadyStateCurrent-datatype , scr:StateShortCircuitResult.TopologicalNode-valueType , scr:ShortCircuitResult.faultKind-datatype , scr:StateShortCircuitResult.minSteadyStateCurrent-datatype , scr:ShortCircuitResult.peakCurrent-datatype , scr:StateShortCircuitResult.TopologicalNode-cardinality , scr:StateShortCircuitResult.initialSymmetricalCurrent-cardinality , scr:ShortCircuitResult.symmetricalBreakingCurrent-cardinality , scr:StateShortCircuitResult.decayingComponentCurrent-cardinality , scr:StateShortCircuitResult.maxSteadyStateCurrent-cardinality;
+        sh:targetClass  gb:StateShortCircuitResult .
+
+scr:StateShortCircuitResult.minSteadyStateCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "StateShortCircuitResult.minSteadyStateCurrent-cardinality";
+        sh:order        2;
+        sh:path         gb:StateShortCircuitResult.minSteadyStateCurrent;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.initialSymmetricalCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "StateShortCircuitResult.initialSymmetricalCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        6;
+        sh:path         gb:StateShortCircuitResult.initialSymmetricalCurrent;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.mRID-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "IdentifiedObject.mRID-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.mRID;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.Terminal-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "StateShortCircuitResult.Terminal-cardinality";
+        sh:order        8;
+        sh:path         gb:StateShortCircuitResult.Terminal;
+        sh:severity     sh:Violation .
+
+scr:ShortCircuitResult.faultKind-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "ShortCircuitResult.faultKind-cardinality";
+        sh:order        12;
+        sh:path         gb:ShortCircuitResult.faultKind;
+        sh:severity     sh:Violation .
+
+scr:ShortCircuitResult.faultKind-datatype
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:in           ( gb:ShortCircuitFaultKind.threePhase gb:ShortCircuitFaultKind.singlePhase );
+        sh:message      "The datatype is not IRI (Internationalized Resource Identifier) or it is enumerated value not part of the profile.";
+        sh:name         "ShortCircuitResult.faultKind-datatype";
+        sh:nodeKind     sh:IRI;
+        sh:order        12;
+        sh:path         gb:ShortCircuitResult.faultKind;
+        sh:severity     sh:Violation .
+
+scr:DatatypesGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Datatypes";
+        sh:order    1 .
+
+scr:StateShortCircuitResult.initialSymmetricalPower-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "StateShortCircuitResult.initialSymmetricalPower-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        4;
+        sh:path         gb:StateShortCircuitResult.initialSymmetricalPower;
+        sh:severity     sh:Violation .
+
+ido:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "CardinalityIO";
+        sh:order    0 .
+
+scr:ShortCircuitResult.peakCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "ShortCircuitResult.peakCurrent-cardinality";
+        sh:order        9;
+        sh:path         gb:ShortCircuitResult.peakCurrent;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.TopologicalNode-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "StateShortCircuitResult.TopologicalNode-cardinality";
+        sh:order        7;
+        sh:path         gb:StateShortCircuitResult.TopologicalNode;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.name-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.name-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.name;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.decayingComponentCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "StateShortCircuitResult.decayingComponentCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        3;
+        sh:path         gb:StateShortCircuitResult.decayingComponentCurrent;
+        sh:severity     sh:Violation .
+
+scr:AssociationsGroup
+        rdf:type    sh:PropertyGroup;
+        rdfs:label  "Associations";
+        sh:order    2 .
+
+scr:ShortCircuitResult.symmetricalBreakingCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "ShortCircuitResult.symmetricalBreakingCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        10;
+        sh:path         gb:ShortCircuitResult.symmetricalBreakingCurrent;
+        sh:severity     sh:Violation .
+
+scr:ShortCircuitResult.symmetricalBreakingCurrentAngle-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "ShortCircuitResult.symmetricalBreakingCurrentAngle-cardinality";
+        sh:order        11;
+        sh:path         gb:ShortCircuitResult.symmetricalBreakingCurrentAngle;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.maxSteadyStateCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "StateShortCircuitResult.maxSteadyStateCurrent-cardinality";
+        sh:order        1;
+        sh:path         gb:StateShortCircuitResult.maxSteadyStateCurrent;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.steadyStateCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "StateShortCircuitResult.steadyStateCurrent-cardinality";
+        sh:order        0;
+        sh:path         gb:StateShortCircuitResult.steadyStateCurrent;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.Terminal-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        scr:AssociationsGroup;
+        sh:in           ( cim:Terminal );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: cim:Terminal";
+        sh:name         "StateShortCircuitResult.Terminal-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        8;
+        sh:path         ( gb:StateShortCircuitResult.Terminal rdf:type );
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.minSteadyStateCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "StateShortCircuitResult.minSteadyStateCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        2;
+        sh:path         gb:StateShortCircuitResult.minSteadyStateCurrent;
+        sh:severity     sh:Violation .
+
+scr:ShortCircuitResult.symmetricalBreakingCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "ShortCircuitResult.symmetricalBreakingCurrent-cardinality";
+        sh:order        10;
+        sh:path         gb:ShortCircuitResult.symmetricalBreakingCurrent;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.phase-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "StateShortCircuitResult.phase-cardinality";
+        sh:order        5;
+        sh:path         gb:StateShortCircuitResult.phase;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.name-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "IdentifiedObject.name-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.name;
+        sh:severity     sh:Violation .
+
+scr:Ontology  rdf:type        owl:Ontology;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-600-2:ed-1" , "urn:iso:std:iec:61970-501:draft:ed-2" , "file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap" , "urn:iso:std:iec:61970-401:draft:ed-1" , "urn:iso:std:iec:61970-301:ed-7:amd1";
+        dcterms:description   "Describing constraints extracted from RDFS.";
+        dcterms:identifier    "urn:uuidbbee7198-cdcd-4075-8105-6200fc8eaebc";
+        dcterms:issued        "2023-12-26T08:17:18.547181100"^^xsd:dateTime;
+        dcterms:language      "en-GB";
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en;
+        dcterms:modified      "2023-06-26"^^xsd:date;
+        dcterms:publisher     "Ofgem"@en;
+        dcterms:rightsHolder  "Ofgem"@en;
+        dcterms:title         "LTDS Short Circuit Result Vocabulary"@en;
+        owl:versionIRI        <Constraints/1.0>;
+        owl:versionInfo       "1.0.0"@en;
+        dcat:keyword          "SCR";
+        dcat:theme            "constraint"@en .
+
+ido:DatatypesGroupIO  rdf:type  sh:PropertyGroup;
+        rdfs:label  "DatatypesIO";
+        sh:order    1 .
+
+scr:StateShortCircuitResult.steadyStateCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "StateShortCircuitResult.steadyStateCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         gb:StateShortCircuitResult.steadyStateCurrent;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.TopologicalNode-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        scr:AssociationsGroup;
+        sh:in           ( cim:TopologicalNode );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: cim:TopologicalNode";
+        sh:name         "StateShortCircuitResult.TopologicalNode-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        7;
+        sh:path         ( gb:StateShortCircuitResult.TopologicalNode rdf:type );
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.decayingComponentCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        scr:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "StateShortCircuitResult.decayingComponentCurrent-cardinality";
+        sh:order        3;
+        sh:path         gb:StateShortCircuitResult.decayingComponentCurrent;
+        sh:severity     sh:Violation .
+
+scr:StateShortCircuitResult.phase-datatype
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:in           ( cim:SinglePhaseKind.s2 cim:SinglePhaseKind.N cim:SinglePhaseKind.B cim:SinglePhaseKind.C cim:SinglePhaseKind.s1 cim:SinglePhaseKind.A );
+        sh:message      "The datatype is not IRI (Internationalized Resource Identifier) or it is enumerated value not part of the profile.";
+        sh:name         "StateShortCircuitResult.phase-datatype";
+        sh:nodeKind     sh:IRI;
+        sh:order        5;
+        sh:path         gb:StateShortCircuitResult.phase;
+        sh:severity     sh:Violation .
+
+scr:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Cardinality";
+        sh:order    0 .
+
+scr:StateShortCircuitResult.maxSteadyStateCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        scr:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "StateShortCircuitResult.maxSteadyStateCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         gb:StateShortCircuitResult.maxSteadyStateCurrent;
+        sh:severity     sh:Violation .

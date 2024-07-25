@@ -1,0 +1,165 @@
+@base          <http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit/Constraints> .
+@prefix cim:     <http://iec.ch/TC57/CIM100#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dash:    <http://datashapes.org/dash#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix dm:      <http://iec.ch/TC57/61970-552/DifferenceModel/1#> .
+@prefix eu:      <http://iec.ch/TC57/CIM100-European#> .
+@prefix gb:      <http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#> .
+@prefix ido:     <http://iec.ch/TC57/ns/CIM/IdentifiedObject/constraints/3.0#> .
+@prefix md:      <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
+@prefix nc:      <http://entsoe.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prof:    <http://www.w3.org/ns/dx/prof/#> .
+@prefix profcim: <http://iec.ch/TC57/ns/CIM/prof-cim#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sc:      <http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit/Constraints#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+sc:PowerTransformerEnd.x0-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sc:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PowerTransformerEnd.x0-cardinality";
+        sh:order        0;
+        sh:path         cim:PowerTransformerEnd.x0;
+        sh:severity     sh:Violation .
+
+sc:PowerTransformerEnd
+        rdf:type        sh:NodeShape;
+        sh:property     sc:PowerTransformerEnd.phaseAngleClock-datatype , sc:PowerTransformerEnd.phaseAngleClock-cardinality , sc:PowerTransformerEnd.x0-datatype , sc:PowerTransformerEnd.x0-cardinality;
+        sh:targetClass  cim:PowerTransformerEnd .
+
+sc:PowerTransformerEnd.phaseAngleClock-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:integer;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sc:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PowerTransformerEnd.phaseAngleClock-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         cim:PowerTransformerEnd.phaseAngleClock;
+        sh:severity     sh:Violation .
+
+sc:ACLineSegment.r0-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sc:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "ACLineSegment.r0-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         cim:ACLineSegment.r0;
+        sh:severity     sh:Violation .
+
+sc:AssociationsGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Associations";
+        sh:order    2 .
+
+sc:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Cardinality";
+        sh:order    0 .
+
+sc:ACLineSegment.r0-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sc:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "ACLineSegment.r0-cardinality";
+        sh:order        0;
+        sh:path         cim:ACLineSegment.r0;
+        sh:severity     sh:Violation .
+
+sc:PowerTransformerEnd.phaseAngleClock-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sc:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PowerTransformerEnd.phaseAngleClock-cardinality";
+        sh:order        1;
+        sh:path         cim:PowerTransformerEnd.phaseAngleClock;
+        sh:severity     sh:Violation .
+
+ido:DatatypesGroupIO  rdf:type  sh:PropertyGroup;
+        rdfs:label  "DatatypesIO";
+        sh:order    1 .
+
+sc:ACLineSegment.x0-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sc:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "ACLineSegment.x0-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         cim:ACLineSegment.x0;
+        sh:severity     sh:Violation .
+
+sc:ACLineSegment  rdf:type  sh:NodeShape;
+        sh:property     sc:ACLineSegment.x0-datatype , sc:ACLineSegment.x0-cardinality , sc:ACLineSegment.r0-datatype , sc:ACLineSegment.r0-cardinality;
+        sh:targetClass  cim:ACLineSegment .
+
+sc:Ontology  rdf:type         owl:Ontology;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-600-2:ed-1" , "file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap" , "urn:iso:std:iec:61970-301:ed-7:amd1" , "urn:iso:std:iec:61970-401:draft:ed-1";
+        dcterms:description   "Describing constraints extracted from RDFS.";
+        dcterms:identifier    "urn:uuidbb07e741-1253-40d1-9de2-c815ebe12221";
+        dcterms:issued        "2023-12-26T08:16:32.678995900"^^xsd:dateTime;
+        dcterms:language      "en-GB";
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en;
+        dcterms:modified      "2023-06-26"^^xsd:date;
+        dcterms:publisher     "Ofgem"@en;
+        dcterms:rightsHolder  "Ofgem"@en;
+        dcterms:title         "LTDS Short Circuit Vocabulary"@en;
+        owl:versionIRI        <Constraints/1.0>;
+        owl:versionInfo       "1.0.0"@en;
+        dcat:keyword          "SC";
+        dcat:theme            "constraint"@en .
+
+sc:DatatypesGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Datatypes";
+        sh:order    1 .
+
+sc:ACLineSegment.x0-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sc:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "ACLineSegment.x0-cardinality";
+        sh:order        1;
+        sh:path         cim:ACLineSegment.x0;
+        sh:severity     sh:Violation .
+
+sc:PowerTransformerEnd.x0-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sc:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PowerTransformerEnd.x0-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         cim:PowerTransformerEnd.x0;
+        sh:severity     sh:Violation .
+
+ido:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "CardinalityIO";
+        sh:order    0 .

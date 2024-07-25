@@ -1,0 +1,342 @@
+@base          <http://ofgem.gov.uk/ns/CIM/LTDS/GeographicalLocation/Constraints> .
+@prefix cim:     <http://iec.ch/TC57/CIM100#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dash:    <http://datashapes.org/dash#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix dm:      <http://iec.ch/TC57/61970-552/DifferenceModel/1#> .
+@prefix eu:      <http://iec.ch/TC57/CIM100-European#> .
+@prefix gb:      <http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#> .
+@prefix gl:      <http://ofgem.gov.uk/ns/CIM/LTDS/GeographicalLocation/Constraints#> .
+@prefix ido:     <http://iec.ch/TC57/ns/CIM/IdentifiedObject/constraints/3.0#> .
+@prefix md:      <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
+@prefix nc:      <http://entsoe.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prof:    <http://www.w3.org/ns/dx/prof/#> .
+@prefix profcim: <http://iec.ch/TC57/ns/CIM/prof-cim#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+gl:PositionPoint.yPosition-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        gl:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PositionPoint.yPosition-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        2;
+        sh:path         cim:PositionPoint.yPosition;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.mRID-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.mRID-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.mRID;
+        sh:severity     sh:Violation .
+
+gl:Ontology  rdf:type         owl:Ontology;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-600-2:ed-1" , "urn:iso:std:iec:61970-301:ed-7:amd1" , "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-401:draft:ed-1" , "file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap";
+        dcterms:description   "Describing constraints extracted from RDFS.";
+        dcterms:identifier    "urn:uuid759d3af0-1cf6-42c7-9b4b-92dfe7e0a198";
+        dcterms:issued        "2023-12-26T08:16:20.992849200"^^xsd:dateTime;
+        dcterms:language      "en-GB";
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en;
+        dcterms:modified      "2023-06-26"^^xsd:date;
+        dcterms:publisher     "Ofgem"@en;
+        dcterms:rightsHolder  "Ofgem"@en;
+        dcterms:title         "LTDS Geographical Location Vocabulary"@en;
+        owl:versionIRI        <Constraints/1.0>;
+        owl:versionInfo       "1.0.0"@en;
+        dcat:keyword          "GL";
+        dcat:theme            "constraint"@en .
+
+gl:Location  rdf:type   sh:NodeShape;
+        sh:property     ido:IdentifiedObject.name-datatype , ido:IdentifiedObject.description-datatype , gl:Location.CoordinateSystem-valueType , ido:IdentifiedObject.mRID-datatype , ido:IdentifiedObject.name-cardinality , gl:Location.PowerSystemResources-cardinality , ido:IdentifiedObject.description-cardinality , ido:IdentifiedObject.mRID-cardinality , gl:Location.CoordinateSystem-cardinality;
+        sh:targetClass  cim:Location .
+
+gl:Location.CoordinateSystem-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        gl:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "Location.CoordinateSystem-cardinality";
+        sh:order        2;
+        sh:path         cim:Location.CoordinateSystem;
+        sh:severity     sh:Violation .
+
+gl:PositionPoint  rdf:type  sh:NodeShape;
+        sh:property     gl:PositionPoint.xPosition-cardinality , gl:PositionPoint.xPosition-datatype , gl:PositionPoint.yPosition-cardinality , gl:PositionPoint.zPosition-cardinality , gl:PositionPoint.yPosition-datatype , gl:PositionPoint.sequenceNumber-cardinality , gl:PositionPoint.sequenceNumber-datatype , gl:PositionPoint.zPosition-datatype , gl:PositionPoint.Location-cardinality;
+        sh:targetClass  cim:PositionPoint .
+
+gl:Location.PowerSystemResources-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        gl:AssociationsGroup;
+        sh:in           ( cim:CsConverter cim:GroundingImpedance cim:EquivalentInjection cim:DCGround eu:WindPowerPlant cim:StaticVarCompensator cim:DCBreaker cim:PhaseTapChangerTabular cim:EquivalentNetwork cim:PostLineSensor cim:PowerElectronicsWindUnit cim:CogenerationPlant cim:SeriesCompensator cim:Clamp cim:DCLineSegment cim:LinearShuntCompensator cim:RatioTapChanger cim:PhotoVoltaicUnit eu:BoundaryPoint cim:DCBusbar cim:Jumper cim:EquivalentBranch cim:BusbarSection cim:ControlArea cim:SolarGeneratingUnit cim:Fuse cim:PhaseTapChangerSymmetrical cim:WaveTrap cim:Substation cim:SurgeArrester cim:LoadBreakSwitch cim:BatteryUnit cim:HydroPowerPlant cim:Switch cim:GroundDisconnector cim:CAESPlant eu:SolarPowerPlant cim:PhaseTapChangerAsymmetrical cim:FaultIndicator cim:PotentialTransformer cim:Breaker cim:GeneratingUnit cim:DCConverterUnit cim:HydroPump cim:NuclearGeneratingUnit cim:ConformLoad cim:DisconnectingCircuitBreaker cim:ThermalGeneratingUnit cim:EquivalentShunt cim:Disconnector cim:VoltageLevel cim:DCSeriesDevice cim:EnergySource cim:PetersenCoil cim:Ground cim:RegulatingControl cim:StationSupply cim:CombinedCyclePlant cim:TapChangerControl cim:PowerElectronicsConnection cim:ACLineSegment cim:HydroGeneratingUnit cim:DCChopper cim:EnergyConsumer cim:WindGeneratingUnit cim:SynchronousMachine cim:NonlinearShuntCompensator cim:Bay cim:Junction cim:NonConformLoad cim:DCDisconnector cim:AsynchronousMachine cim:VsConverter cim:Line cim:ExternalNetworkInjection cim:PowerTransformer cim:CurrentTransformer cim:DCLine cim:DCShunt cim:PhaseTapChangerLinear cim:DCSwitch cim:Equipment cim:Cut );
+        sh:message      "One of the following occurs: 1) The value type is not IRI; 2) The value type is not the right class.";
+        sh:name         "Location.PowerSystemResources-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        1;
+        sh:path         ( cim:Location.PowerSystemResources rdf:type );
+        sh:severity     sh:Violation .
+
+gl:DatatypesGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Datatypes";
+        sh:order    1 .
+
+gl:PositionPoint.sequenceNumber-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        gl:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "PositionPoint.sequenceNumber-cardinality";
+        sh:order        1;
+        sh:path         cim:PositionPoint.sequenceNumber;
+        sh:severity     sh:Violation .
+
+gl:Location.PowerSystemResources-valueTypeNodeShape
+        rdf:type        sh:NodeShape;
+        sh:property     gl:Location.PowerSystemResources-valueType;
+        sh:targetClass  cim:Location .
+
+ido:IdentifiedObject.mRID-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "IdentifiedObject.mRID-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.mRID;
+        sh:severity     sh:Violation .
+
+gl:PositionPoint.Location-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        gl:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "PositionPoint.Location-cardinality";
+        sh:order        4;
+        sh:path         cim:PositionPoint.Location;
+        sh:severity     sh:Violation .
+
+ido:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "CardinalityIO";
+        sh:order    0 .
+
+gl:PositionPoint.xPosition-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        gl:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PositionPoint.xPosition-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         cim:PositionPoint.xPosition;
+        sh:severity     sh:Violation .
+
+gl:AssociationsGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Associations";
+        sh:order    2 .
+
+gl:CoordinateSystem.crsUrn-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        gl:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "CoordinateSystem.crsUrn-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         cim:CoordinateSystem.crsUrn;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.name-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.name-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.name;
+        sh:severity     sh:Violation .
+
+gl:PositionPoint.yPosition-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        gl:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PositionPoint.yPosition-cardinality";
+        sh:order        2;
+        sh:path         cim:PositionPoint.yPosition;
+        sh:severity     sh:Violation .
+
+gl:Location.CoordinateSystem-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        gl:AssociationsGroup;
+        sh:in           ( cim:CoordinateSystem );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: cim:CoordinateSystem";
+        sh:name         "Location.CoordinateSystem-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        2;
+        sh:path         ( cim:Location.CoordinateSystem rdf:type );
+        sh:severity     sh:Violation .
+
+gl:PositionPoint.zPosition-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        gl:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "PositionPoint.zPosition-cardinality";
+        sh:order        3;
+        sh:path         cim:PositionPoint.zPosition;
+        sh:severity     sh:Violation .
+
+gl:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Cardinality";
+        sh:order    0 .
+
+gl:CoordinateSystem.crsUrn-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        gl:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "CoordinateSystem.crsUrn-cardinality";
+        sh:order        0;
+        sh:path         cim:CoordinateSystem.crsUrn;
+        sh:severity     sh:Violation .
+
+gl:PositionPoint.zPosition-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        gl:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PositionPoint.zPosition-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        3;
+        sh:path         cim:PositionPoint.zPosition;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.description-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.description-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.description;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.name-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "IdentifiedObject.name-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.name;
+        sh:severity     sh:Violation .
+
+gl:PositionPoint.Location-valueTypeNodeShape
+        rdf:type        sh:NodeShape;
+        sh:property     gl:PositionPoint.Location-valueType;
+        sh:targetClass  cim:PositionPoint .
+
+gl:PositionPoint.xPosition-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        gl:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PositionPoint.xPosition-cardinality";
+        sh:order        0;
+        sh:path         cim:PositionPoint.xPosition;
+        sh:severity     sh:Violation .
+
+gl:CoordinateSystem  rdf:type  sh:NodeShape;
+        sh:property     ido:IdentifiedObject.description-cardinality , gl:CoordinateSystem.crsUrn-cardinality , ido:IdentifiedObject.mRID-datatype , ido:IdentifiedObject.name-cardinality , gl:CoordinateSystem.crsUrn-datatype , ido:IdentifiedObject.name-datatype , ido:IdentifiedObject.mRID-cardinality , ido:IdentifiedObject.description-datatype;
+        sh:targetClass  cim:CoordinateSystem .
+
+ido:IdentifiedObject.description-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "IdentifiedObject.description-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.description;
+        sh:severity     sh:Violation .
+
+ido:DatatypesGroupIO  rdf:type  sh:PropertyGroup;
+        rdfs:label  "DatatypesIO";
+        sh:order    1 .
+
+gl:PositionPoint.sequenceNumber-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:integer;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        gl:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PositionPoint.sequenceNumber-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         cim:PositionPoint.sequenceNumber;
+        sh:severity     sh:Violation .
+
+gl:PositionPoint.Location-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        gl:AssociationsGroup;
+        sh:in           ( cim:Location cim:ServiceLocation );
+        sh:message      "One of the following occurs: 1) The value type is not IRI; 2) The value type is not the right class.";
+        sh:name         "PositionPoint.Location-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        4;
+        sh:path         ( cim:PositionPoint.Location rdf:type );
+        sh:severity     sh:Violation .
+
+gl:Location.PowerSystemResources-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        gl:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "Location.PowerSystemResources-cardinality";
+        sh:order        1;
+        sh:path         cim:Location.PowerSystemResources;
+        sh:severity     sh:Violation .

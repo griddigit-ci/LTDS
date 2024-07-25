@@ -1,0 +1,640 @@
+BASE   <http://ofgem.gov.uk/ns/CIM/LTDS/StateVariables/Constraints>
+PREFIX cim:     <http://iec.ch/TC57/CIM100#>
+PREFIX dcat:    <http://www.w3.org/ns/dcat#>
+PREFIX dcterms: <http://purl.org/dc/terms/#>
+PREFIX ido:     <http://iec.ch/TC57/ns/CIM/IdentifiedObject/constraints/3.0#>
+PREFIX owl:     <http://www.w3.org/2002/07/owl#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sh:      <http://www.w3.org/ns/shacl#>
+PREFIX sv:      <http://ofgem.gov.uk/ns/CIM/LTDS/StateVariables/Constraints#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+sv:Ontology  rdf:type         owl:Ontology;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-301:ed-7:amd1" , "urn:iso:std:iec:61970-600-2:ed-1" , "file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap" , "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-401:draft:ed-1";
+        dcterms:description   "Describing constraints extracted from RDFS.";
+        dcterms:identifier    "urn:uuid7d9832f5-224c-4e6f-96f0-3578eb3febec";
+        dcterms:issued        "2024-07-25T20:29:59.071605500"^^xsd:dateTime;
+        dcterms:language      "en-GB";
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en;
+        dcterms:modified      "2024-07-18"^^xsd:date;
+        dcterms:publisher     "Ofgem"@en;
+        dcterms:rightsHolder  "Ofgem"@en;
+        dcterms:title         "LTDS State Variables Vocabulary"@en;
+        owl:versionIRI        <Constraints/1.0>;
+        owl:versionInfo       "1.0.1"@en;
+        dcat:keyword          "SV";
+        dcat:theme            "constraint"@en .
+
+sv:SvStatus.ConductingEquipment-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:PowerTransformer cim:Switch cim:SeriesCompensator cim:BusbarSection cim:EnergyConsumer cim:Disconnector cim:Fuse cim:GroundDisconnector cim:EquivalentInjection cim:ACLineSegment cim:StaticVarCompensator cim:PowerElectronicsConnection cim:Breaker cim:LoadBreakSwitch cim:AsynchronousMachine cim:SynchronousMachine cim:NonlinearShuntCompensator cim:LinearShuntCompensator cim:DisconnectingCircuitBreaker );
+        sh:message      "One of the following occurs: 1) The value type is not IRI; 2) The value type is not the right class.";
+        sh:name         "SvStatus.ConductingEquipment-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        1;
+        sh:path         ( cim:SvStatus.ConductingEquipment rdf:type );
+        sh:severity     sh:Violation .
+
+sv:SvStatus.ConductingEquipment-valueTypeNodeShape
+        rdf:type        sh:NodeShape;
+        sh:property     sv:SvStatus.ConductingEquipment-valueType;
+        sh:targetClass  cim:SvStatus .
+
+sv:SvStatus.ConductingEquipment-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "SvStatus.ConductingEquipment-cardinality";
+        sh:order        1;
+        sh:path         cim:SvStatus.ConductingEquipment;
+        sh:severity     sh:Violation .
+
+sv:SvStatus.inService-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:boolean;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvStatus.inService-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         cim:SvStatus.inService;
+        sh:severity     sh:Violation .
+
+sv:SvStatus.inService-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvStatus.inService-cardinality";
+        sh:order        0;
+        sh:path         cim:SvStatus.inService;
+        sh:severity     sh:Violation .
+
+sv:SvStatus  rdf:type   sh:NodeShape;
+        sh:property     sv:SvStatus.ConductingEquipment-cardinality , sv:SvStatus.inService-datatype , sv:SvStatus.inService-cardinality;
+        sh:targetClass  cim:SvStatus .
+
+sv:SvVoltage.TopologicalNode-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:TopologicalNode );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: cim17:TopologicalNode";
+        sh:name         "SvVoltage.TopologicalNode-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        2;
+        sh:path         ( cim:SvVoltage.TopologicalNode rdf:type );
+        sh:severity     sh:Violation .
+
+sv:SvVoltage.TopologicalNode-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "SvVoltage.TopologicalNode-cardinality";
+        sh:order        2;
+        sh:path         cim:SvVoltage.TopologicalNode;
+        sh:severity     sh:Violation .
+
+sv:SvVoltage.angle-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvVoltage.angle-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         cim:SvVoltage.angle;
+        sh:severity     sh:Violation .
+
+sv:SvVoltage.angle-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvVoltage.angle-cardinality";
+        sh:order        1;
+        sh:path         cim:SvVoltage.angle;
+        sh:severity     sh:Violation .
+
+sv:SvVoltage.v-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvVoltage.v-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         cim:SvVoltage.v;
+        sh:severity     sh:Violation .
+
+sv:SvVoltage.v-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvVoltage.v-cardinality";
+        sh:order        0;
+        sh:path         cim:SvVoltage.v;
+        sh:severity     sh:Violation .
+
+sv:SvVoltage  rdf:type  sh:NodeShape;
+        sh:property     sv:SvVoltage.TopologicalNode-valueType , sv:SvVoltage.TopologicalNode-cardinality , sv:SvVoltage.angle-datatype , sv:SvVoltage.angle-cardinality , sv:SvVoltage.v-datatype , sv:SvVoltage.v-cardinality;
+        sh:targetClass  cim:SvVoltage .
+
+sv:SvInjection.pInjection-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvInjection.pInjection-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        2;
+        sh:path         cim:SvInjection.pInjection;
+        sh:severity     sh:Violation .
+
+sv:SvInjection.pInjection-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvInjection.pInjection-cardinality";
+        sh:order        2;
+        sh:path         cim:SvInjection.pInjection;
+        sh:severity     sh:Violation .
+
+sv:SvInjection.TopologicalNode-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:TopologicalNode );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: cim17:TopologicalNode";
+        sh:name         "SvInjection.TopologicalNode-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        1;
+        sh:path         ( cim:SvInjection.TopologicalNode rdf:type );
+        sh:severity     sh:Violation .
+
+sv:SvInjection.TopologicalNode-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "SvInjection.TopologicalNode-cardinality";
+        sh:order        1;
+        sh:path         cim:SvInjection.TopologicalNode;
+        sh:severity     sh:Violation .
+
+sv:SvInjection.qInjection-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvInjection.qInjection-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         cim:SvInjection.qInjection;
+        sh:severity     sh:Violation .
+
+sv:SvInjection.qInjection-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "SvInjection.qInjection-cardinality";
+        sh:order        0;
+        sh:path         cim:SvInjection.qInjection;
+        sh:severity     sh:Violation .
+
+sv:SvInjection  rdf:type  sh:NodeShape;
+        sh:property     sv:SvInjection.pInjection-datatype , sv:SvInjection.pInjection-cardinality , sv:SvInjection.TopologicalNode-valueType , sv:SvInjection.TopologicalNode-cardinality , sv:SvInjection.qInjection-datatype , sv:SvInjection.qInjection-cardinality;
+        sh:targetClass  cim:SvInjection .
+
+sv:SvShuntCompensatorSections.sections-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvShuntCompensatorSections.sections-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         cim:SvShuntCompensatorSections.sections;
+        sh:severity     sh:Violation .
+
+sv:SvShuntCompensatorSections.sections-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvShuntCompensatorSections.sections-cardinality";
+        sh:order        1;
+        sh:path         cim:SvShuntCompensatorSections.sections;
+        sh:severity     sh:Violation .
+
+sv:SvShuntCompensatorSections.ShuntCompensator-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:NonlinearShuntCompensator cim:LinearShuntCompensator );
+        sh:message      "One of the following occurs: 1) The value type is not IRI; 2) The value type is not the right class.";
+        sh:name         "SvShuntCompensatorSections.ShuntCompensator-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        0;
+        sh:path         ( cim:SvShuntCompensatorSections.ShuntCompensator rdf:type );
+        sh:severity     sh:Violation .
+
+sv:SvShuntCompensatorSections.ShuntCompensator-valueTypeNodeShape
+        rdf:type        sh:NodeShape;
+        sh:property     sv:SvShuntCompensatorSections.ShuntCompensator-valueType;
+        sh:targetClass  cim:SvShuntCompensatorSections .
+
+sv:SvShuntCompensatorSections.ShuntCompensator-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "SvShuntCompensatorSections.ShuntCompensator-cardinality";
+        sh:order        0;
+        sh:path         cim:SvShuntCompensatorSections.ShuntCompensator;
+        sh:severity     sh:Violation .
+
+sv:SvShuntCompensatorSections
+        rdf:type        sh:NodeShape;
+        sh:property     sv:SvShuntCompensatorSections.sections-datatype , sv:SvShuntCompensatorSections.sections-cardinality , sv:SvShuntCompensatorSections.ShuntCompensator-cardinality;
+        sh:targetClass  cim:SvShuntCompensatorSections .
+
+sv:SvSwitch.Switch-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:Switch cim:Disconnector cim:Fuse cim:GroundDisconnector cim:Breaker cim:LoadBreakSwitch cim:DisconnectingCircuitBreaker );
+        sh:message      "One of the following occurs: 1) The value type is not IRI; 2) The value type is not the right class.";
+        sh:name         "SvSwitch.Switch-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        1;
+        sh:path         ( cim:SvSwitch.Switch rdf:type );
+        sh:severity     sh:Violation .
+
+sv:SvSwitch.Switch-valueTypeNodeShape
+        rdf:type        sh:NodeShape;
+        sh:property     sv:SvSwitch.Switch-valueType;
+        sh:targetClass  cim:SvSwitch .
+
+sv:SvSwitch.Switch-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "SvSwitch.Switch-cardinality";
+        sh:order        1;
+        sh:path         cim:SvSwitch.Switch;
+        sh:severity     sh:Violation .
+
+sv:SvSwitch.open-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:boolean;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvSwitch.open-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         cim:SvSwitch.open;
+        sh:severity     sh:Violation .
+
+sv:SvSwitch.open-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvSwitch.open-cardinality";
+        sh:order        0;
+        sh:path         cim:SvSwitch.open;
+        sh:severity     sh:Violation .
+
+sv:SvSwitch  rdf:type   sh:NodeShape;
+        sh:property     sv:SvSwitch.Switch-cardinality , sv:SvSwitch.open-datatype , sv:SvSwitch.open-cardinality;
+        sh:targetClass  cim:SvSwitch .
+
+sv:Terminal.SvPowerFlow-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the inverse direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "Terminal.SvPowerFlow-cardinality";
+        sh:order        0;
+        sh:path         [ sh:alternativePath  ( [ sh:inversePath  cim:SvPowerFlow.Terminal ]
+                                                [ sh:inversePath  <http://iec.ch/TC57/2013/CIM-schema-cim16#SvPowerFlow.Terminal> ]
+                                                [ sh:inversePath  <https://cim.ucaiug.io/ns#SvPowerFlow.Terminal> ]
+                                              )
+                        ];
+        sh:severity     sh:Violation .
+
+sv:Terminal  rdf:type   sh:NodeShape;
+        sh:property     ido:IdentifiedObject.mRID-datatype , ido:IdentifiedObject.mRID-cardinality , ido:IdentifiedObject.name-datatype , ido:IdentifiedObject.name-cardinality , sv:Terminal.SvPowerFlow-cardinality;
+        sh:targetClass  cim:Terminal .
+
+sv:SvTapStep.position-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvTapStep.position-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         cim:SvTapStep.position;
+        sh:severity     sh:Violation .
+
+sv:SvTapStep.position-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvTapStep.position-cardinality";
+        sh:order        1;
+        sh:path         cim:SvTapStep.position;
+        sh:severity     sh:Violation .
+
+sv:SvTapStep.TapChanger-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:RatioTapChanger cim:PhaseTapChangerNonLinear cim:PhaseTapChangerLinear cim:PhaseTapChangerTabular cim:PhaseTapChangerSymmetrical cim:PhaseTapChangerAsymmetrical );
+        sh:message      "One of the following occurs: 1) The value type is not IRI; 2) The value type is not the right class.";
+        sh:name         "SvTapStep.TapChanger-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        0;
+        sh:path         ( cim:SvTapStep.TapChanger rdf:type );
+        sh:severity     sh:Violation .
+
+sv:SvTapStep.TapChanger-valueTypeNodeShape
+        rdf:type        sh:NodeShape;
+        sh:property     sv:SvTapStep.TapChanger-valueType;
+        sh:targetClass  cim:SvTapStep .
+
+sv:SvTapStep.TapChanger-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "SvTapStep.TapChanger-cardinality";
+        sh:order        0;
+        sh:path         cim:SvTapStep.TapChanger;
+        sh:severity     sh:Violation .
+
+sv:SvTapStep  rdf:type  sh:NodeShape;
+        sh:property     sv:SvTapStep.position-datatype , sv:SvTapStep.position-cardinality , sv:SvTapStep.TapChanger-cardinality;
+        sh:targetClass  cim:SvTapStep .
+
+sv:SvPowerFlow.q-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvPowerFlow.q-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        2;
+        sh:path         cim:SvPowerFlow.q;
+        sh:severity     sh:Violation .
+
+sv:SvPowerFlow.q-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvPowerFlow.q-cardinality";
+        sh:order        2;
+        sh:path         cim:SvPowerFlow.q;
+        sh:severity     sh:Violation .
+
+sv:SvPowerFlow.p-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        sv:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "SvPowerFlow.p-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         cim:SvPowerFlow.p;
+        sh:severity     sh:Violation .
+
+sv:SvPowerFlow.p-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "SvPowerFlow.p-cardinality";
+        sh:order        1;
+        sh:path         cim:SvPowerFlow.p;
+        sh:severity     sh:Violation .
+
+sv:SvPowerFlow.Terminal-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:Terminal );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: cim17:Terminal";
+        sh:name         "SvPowerFlow.Terminal-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        0;
+        sh:path         ( cim:SvPowerFlow.Terminal rdf:type );
+        sh:severity     sh:Violation .
+
+sv:SvPowerFlow.Terminal-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "SvPowerFlow.Terminal-cardinality";
+        sh:order        0;
+        sh:path         cim:SvPowerFlow.Terminal;
+        sh:severity     sh:Violation .
+
+sv:SvPowerFlow  rdf:type  sh:NodeShape;
+        sh:property     sv:SvPowerFlow.q-datatype , sv:SvPowerFlow.q-cardinality , sv:SvPowerFlow.p-datatype , sv:SvPowerFlow.p-cardinality , sv:SvPowerFlow.Terminal-valueType , sv:SvPowerFlow.Terminal-cardinality;
+        sh:targetClass  cim:SvPowerFlow .
+
+sv:ConductingEquipment.SvStatus-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the inverse direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "ConductingEquipment.SvStatus-cardinality";
+        sh:order        1;
+        sh:path         [ sh:alternativePath  ( [ sh:inversePath  cim:SvStatus.ConductingEquipment ]
+                                                [ sh:inversePath  <http://iec.ch/TC57/2013/CIM-schema-cim16#SvStatus.ConductingEquipment> ]
+                                                [ sh:inversePath  <https://cim.ucaiug.io/ns#SvStatus.ConductingEquipment> ]
+                                              )
+                        ];
+        sh:severity     sh:Violation .
+
+sv:Switch  rdf:type     sh:NodeShape;
+        sh:property     ido:IdentifiedObject.mRID-datatype , ido:IdentifiedObject.mRID-cardinality , ido:IdentifiedObject.name-datatype , ido:IdentifiedObject.name-cardinality , sv:ConductingEquipment.SvStatus-cardinality;
+        sh:targetClass  cim:Switch .
+
+ido:IdentifiedObject.mRID-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.mRID-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.mRID;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.mRID-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "IdentifiedObject.mRID-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.mRID;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.name-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.name-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.name;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.name-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "IdentifiedObject.name-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.name;
+        sh:severity     sh:Violation .
+
+sv:TopologicalIsland.TopologicalNodes-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:TopologicalNode );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: cim17:TopologicalNode";
+        sh:name         "TopologicalIsland.TopologicalNodes-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        1;
+        sh:path         ( cim:TopologicalIsland.TopologicalNodes rdf:type );
+        sh:severity     sh:Violation .
+
+sv:TopologicalIsland.TopologicalNodes-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:message      "Cardinality violation. Lower bound shall be 1";
+        sh:minCount     1;
+        sh:name         "TopologicalIsland.TopologicalNodes-cardinality";
+        sh:order        1;
+        sh:path         cim:TopologicalIsland.TopologicalNodes;
+        sh:severity     sh:Violation .
+
+sv:TopologicalIsland.AngleRefTopologicalNode-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        sv:AssociationsGroup;
+        sh:in           ( cim:TopologicalNode );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: cim17:TopologicalNode";
+        sh:name         "TopologicalIsland.AngleRefTopologicalNode-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        0;
+        sh:path         ( cim:TopologicalIsland.AngleRefTopologicalNode rdf:type );
+        sh:severity     sh:Violation .
+
+sv:TopologicalIsland.AngleRefTopologicalNode-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        sv:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "TopologicalIsland.AngleRefTopologicalNode-cardinality";
+        sh:order        0;
+        sh:path         cim:TopologicalIsland.AngleRefTopologicalNode;
+        sh:severity     sh:Violation .
+
+sv:TopologicalIsland  rdf:type  sh:NodeShape;
+        sh:property     ido:IdentifiedObject.mRID-datatype , ido:IdentifiedObject.mRID-cardinality , ido:IdentifiedObject.name-datatype , ido:IdentifiedObject.name-cardinality , sv:TopologicalIsland.TopologicalNodes-valueType , sv:TopologicalIsland.TopologicalNodes-cardinality , sv:TopologicalIsland.AngleRefTopologicalNode-valueType , sv:TopologicalIsland.AngleRefTopologicalNode-cardinality;
+        sh:targetClass  cim:TopologicalIsland .
+
+sv:AssociationsGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Associations";
+        sh:order    2 .
+
+ido:DatatypesGroupIO  rdf:type  sh:PropertyGroup;
+        rdfs:label  "DatatypesIO";
+        sh:order    1 .
+
+sv:DatatypesGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Datatypes";
+        sh:order    1 .
+
+ido:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "CardinalityIO";
+        sh:order    0 .
+
+sv:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "Cardinality";
+        sh:order    0 .

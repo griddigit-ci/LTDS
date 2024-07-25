@@ -33,13 +33,13 @@ xml:base ="http://iec.ch/TC57/CIM100"
 	<dcterms:conformsTo>file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap</dcterms:conformsTo>
 	<dcterms:conformsTo>urn:iso:std:iec:61970-401:draft:ed-1</dcterms:conformsTo>
 	<dcterms:conformsTo>urn:iso:std:iec:61970-501:draft:ed-2</dcterms:conformsTo>
-	<owl:versionInfo xml:lang ="en">1.0.0</owl:versionInfo>
+	<owl:versionInfo xml:lang ="en">1.0.1</owl:versionInfo>
 	<dcterms:creator xml:lang ="en">Ofgem LTDS WG</dcterms:creator>
 	<dcterms:description xml:lang ="en">This vocabulary is describing the LTDS Deviation Equipment profile.</dcterms:description>
 	<dcterms:identifier>urn:uuid:03c1bd2e-555c-4b77-8b01-448a7eb1de66</dcterms:identifier>
 	<dcterms:language>en-GB</dcterms:language>
 	<dcterms:license xml:lang ="en">https://www.apache.org/licenses/LICENSE-2.0</dcterms:license>
-	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-06-26</dcterms:modified>
+	<dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-25</dcterms:modified>
 	<dcterms:publisher xml:lang ="en">Ofgem</dcterms:publisher>
 	<dcterms:rightsHolder xml:lang ="en">Ofgem</dcterms:rightsHolder>
 	<dcterms:title xml:lang ="en">LTDS Deviation Equipment Vocabulary</dcterms:title>
@@ -1746,7 +1746,7 @@ The attribute shall be a positive value.</rdfs:comment>
 	<cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/DeviationEQ#Package_LTDSdeviationCGMESEquipmentProfile"/>
 	<rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
 	 </rdf:Description>
-	 <rdf:Description rdf:about="http://iec.ch/TC57/CIM100#IdentifiedObject.energyIdentCodeEic">
+	 <rdf:Description rdf:about="http://iec.ch/TC57/CIM100-European#IdentifiedObject.energyIdentCodeEic">
 	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
 	<rdfs:label xml:lang="en">energyIdentCodeEic</rdfs:label>
 	<rdfs:domain rdf:resource="#IdentifiedObject"/>
@@ -1757,7 +1757,7 @@ The attribute shall be a positive value.</rdfs:comment>
 	<rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The attribute is used for an exchange of the EIC code (Energy identification Code). The length of the string is 16 characters as defined by the EIC code. For details on EIC scheme please refer to ENTSO-E web site.</rdfs:comment>
 	<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
 	 </rdf:Description>
-	 <rdf:Description rdf:about="http://iec.ch/TC57/CIM100#IdentifiedObject.shortName">
+	 <rdf:Description rdf:about="http://iec.ch/TC57/CIM100-European#IdentifiedObject.shortName">
 	<cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
 	<rdfs:label xml:lang="en">shortName</rdfs:label>
 	<rdfs:domain rdf:resource="#IdentifiedObject"/>

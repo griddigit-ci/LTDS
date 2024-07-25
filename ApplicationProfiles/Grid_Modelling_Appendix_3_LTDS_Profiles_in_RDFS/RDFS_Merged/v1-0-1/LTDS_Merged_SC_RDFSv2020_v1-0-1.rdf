@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF
+    xmlns:dcterms="http://purl.org/dc/terms/#"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:profcim="http://iec.ch/TC57/ns/CIM/prof-cim#"
@@ -7,7 +8,6 @@
     xmlns:dcat="http://www.w3.org/ns/dcat#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:cim="http://iec.ch/TC57/CIM100#"
-    xmlns:dcterms="http://purl.org/dc/terms/#"
     xmlns:gb="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#"
   xml:base="http://iec.ch/TC57/CIM100" > 
   <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Ontology">
@@ -22,7 +22,7 @@
     <dcat:keyword>SC</dcat:keyword>
     <dcterms:language>en-GB</dcterms:language>
     <dcterms:license xml:lang="en">https://www.apache.org/licenses/LICENSE-2.0</dcterms:license>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-18</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-25</dcterms:modified>
     <dcterms:publisher xml:lang="en">Ofgem</dcterms:publisher>
     <dcterms:rightsHolder xml:lang="en">Ofgem</dcterms:rightsHolder>
     <dcat:theme xml:lang="en">vocabulary</dcat:theme>
@@ -133,6 +133,14 @@ The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same 
     <cims:stereotype>Primitive</cims:stereotype>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:about="#Breaker">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_SCProfile"/>
+    <rdfs:comment>A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit.</rdfs:comment>
+    <rdfs:label xml:lang="en">Breaker</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#ProtectedSwitch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#Conductance">
     <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_SCProfile"/>
     <rdfs:comment>Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance.</rdfs:comment>
@@ -213,6 +221,14 @@ The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same 
     <cims:stereotype>Primitive</cims:stereotype>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:about="#DisconnectingCircuitBreaker">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_SCProfile"/>
+    <rdfs:comment>A circuit breaking device including disconnecting function, eliminating the need for separate disconnectors.</rdfs:comment>
+    <rdfs:label xml:lang="en">DisconnectingCircuitBreaker</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#Breaker"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
   <rdf:Description rdf:about="#Float">
     <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_SCProfile"/>
     <rdfs:comment>A floating point number. The range is unspecified and not limited.</rdfs:comment>
@@ -271,6 +287,14 @@ IRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicod
     <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
     <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#LoadBreakSwitch">
+    <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_SCProfile"/>
+    <rdfs:comment>A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions.</rdfs:comment>
+    <rdfs:label xml:lang="en">LoadBreakSwitch</rdfs:label>
+    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#concrete"/>
+    <rdfs:subClassOf rdf:resource="#ProtectedSwitch"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
   </rdf:Description>
   <rdf:Description rdf:about="#PU">
     <cims:belongsToCategory rdf:resource="http://ofgem.gov.uk/ns/CIM/LTDS/ShortCircuit#Package_SCProfile"/>

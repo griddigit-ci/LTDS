@@ -1,0 +1,775 @@
+@base          <http://ofgem.gov.uk/ns/CIM/LTDS/SystemCapacity/Constraints> .
+@prefix cim:     <http://iec.ch/TC57/CIM100#> .
+@prefix cims:    <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#> .
+@prefix dash:    <http://datashapes.org/dash#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/#> .
+@prefix dm:      <http://iec.ch/TC57/61970-552/DifferenceModel/1#> .
+@prefix eu:      <http://iec.ch/TC57/CIM100-European#> .
+@prefix gb:      <http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#> .
+@prefix ido:     <http://iec.ch/TC57/ns/CIM/IdentifiedObject/constraints/3.0#> .
+@prefix md:      <http://iec.ch/TC57/61970-552/ModelDescription/1#> .
+@prefix nc:      <http://entsoe.eu/ns/nc#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prof:    <http://www.w3.org/ns/dx/prof/#> .
+@prefix profcim: <http://iec.ch/TC57/ns/CIM/prof-cim#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix syscap:  <http://ofgem.gov.uk/ns/CIM/LTDS/SystemCapacity/Constraints#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+syscap:ShortCircuitResult.peakCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "ShortCircuitResult.peakCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         gb:ShortCircuitResult.peakCurrent;
+        sh:severity     sh:Violation .
+
+syscap:FirmCapacity.firmCapacityWinter-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "FirmCapacity.firmCapacityWinter-cardinality";
+        sh:order        2;
+        sh:path         gb:FirmCapacity.firmCapacityWinter;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.maxLoadingWinter-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "MaximumLoading.maxLoadingWinter-cardinality";
+        sh:order        2;
+        sh:path         gb:MaximumLoading.maxLoadingWinter;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.mRID-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.mRID-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.mRID;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadConnectionOffersMadeCapacity-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.loadConnectionOffersMadeCapacity-cardinality";
+        sh:order        0;
+        sh:path         gb:PastYearConnectionActivity.loadConnectionOffersMadeCapacity;
+        sh:severity     sh:Violation .
+
+syscap:SummaryShortCircuitResult
+        rdf:type        sh:NodeShape;
+        sh:property     ido:IdentifiedObject.name-cardinality , syscap:ShortCircuitResult.symmetricalBreakingCurrentAngle-datatype , syscap:SummaryShortCircuitResult.BusbarGroup-valueType , syscap:SummaryShortCircuitResult.BusbarGroup-cardinality , syscap:ShortCircuitResult.symmetricalBreakingCurrentAngle-cardinality , ido:IdentifiedObject.name-datatype , ido:IdentifiedObject.mRID-datatype , syscap:ShortCircuitResult.faultKind-cardinality , ido:IdentifiedObject.mRID-cardinality , syscap:ShortCircuitResult.symmetricalBreakingCurrent-cardinality , syscap:ShortCircuitResult.peakCurrent-datatype , ido:IdentifiedObject.description-cardinality , ido:IdentifiedObject.description-datatype , syscap:ShortCircuitResult.peakCurrent-cardinality , syscap:ShortCircuitResult.symmetricalBreakingCurrent-datatype , syscap:ShortCircuitResult.faultKind-datatype;
+        sh:targetClass  gb:SummaryShortCircuitResult .
+
+syscap:PastYearConnectionActivity.generationBudgetEstimatesProvidedCount-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:integer;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.generationBudgetEstimatesProvidedCount-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        9;
+        sh:path         gb:PastYearConnectionActivity.generationBudgetEstimatesProvidedCount;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        4;
+        sh:path         gb:PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.BusbarGroup-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.BusbarGroup-cardinality";
+        sh:order        6;
+        sh:path         gb:PastYearConnectionActivity.BusbarGroup;
+        sh:severity     sh:Violation .
+
+syscap:ShortCircuitResult.faultKind-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "ShortCircuitResult.faultKind-cardinality";
+        sh:order        4;
+        sh:path         gb:ShortCircuitResult.faultKind;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.generationConnectionOffersAcceptedCount-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.generationConnectionOffersAcceptedCount-cardinality";
+        sh:order        11;
+        sh:path         gb:PastYearConnectionActivity.generationConnectionOffersAcceptedCount;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadConnectionOffersMadeCount-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:integer;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.loadConnectionOffersMadeCount-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        8;
+        sh:path         gb:PastYearConnectionActivity.loadConnectionOffersMadeCount;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadConnectionOffersMadeCapacity-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.loadConnectionOffersMadeCapacity-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         gb:PastYearConnectionActivity.loadConnectionOffersMadeCapacity;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.generationBudgetEstimatesProvidedCount-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.generationBudgetEstimatesProvidedCount-cardinality";
+        sh:order        9;
+        sh:path         gb:PastYearConnectionActivity.generationBudgetEstimatesProvidedCount;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        3;
+        sh:path         gb:PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.generationConnectionOffersMadeCount-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:integer;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.generationConnectionOffersMadeCount-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        7;
+        sh:path         gb:PastYearConnectionActivity.generationConnectionOffersMadeCount;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.BusbarGroup-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        syscap:AssociationsGroup;
+        sh:in           ( gb:BusbarGroup );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: gb:BusbarGroup";
+        sh:name         "MaximumLoading.BusbarGroup-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        3;
+        sh:path         ( gb:MaximumLoading.BusbarGroup rdf:type );
+        sh:severity     sh:Violation .
+
+syscap:FirmCapacity  rdf:type  sh:NodeShape;
+        sh:property     syscap:FirmCapacity.BusbarGroup-valueType , syscap:FirmCapacity.firmCapacityWinter-cardinality , syscap:FirmCapacity.firmCapacitySummer-cardinality , ido:IdentifiedObject.mRID-datatype , ido:IdentifiedObject.name-cardinality , ido:IdentifiedObject.name-datatype , ido:IdentifiedObject.description-datatype , syscap:FirmCapacity.firmCapacitySummer-datatype , syscap:FirmCapacity.BusbarGroup-cardinality , ido:IdentifiedObject.description-cardinality , ido:IdentifiedObject.mRID-cardinality , syscap:FirmCapacity.firmCapacityWinter-datatype;
+        sh:targetClass  gb:FirmCapacity .
+
+syscap:FirmCapacity.BusbarGroup-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        syscap:AssociationsGroup;
+        sh:in           ( gb:BusbarGroup );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: gb:BusbarGroup";
+        sh:name         "FirmCapacity.BusbarGroup-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        1;
+        sh:path         ( gb:FirmCapacity.BusbarGroup rdf:type );
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.mRID-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "IdentifiedObject.mRID-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.mRID;
+        sh:severity     sh:Violation .
+
+syscap:FirmCapacity.firmCapacitySummer-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "FirmCapacity.firmCapacitySummer-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         gb:FirmCapacity.firmCapacitySummer;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity-cardinality";
+        sh:order        4;
+        sh:path         gb:PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity;
+        sh:severity     sh:Violation .
+
+syscap:DatatypesGroup
+        rdf:type    sh:PropertyGroup;
+        rdfs:label  "Datatypes";
+        sh:order    1 .
+
+syscap:Ontology  rdf:type     owl:Ontology;
+        dcterms:conformsTo    "urn:iso:std:iec:61970-401:draft:ed-1" , "urn:iso:std:iec:61970-501:draft:ed-2" , "urn:iso:std:iec:61970-301:ed-7:amd1" , "urn:iso:std:iec:61970-600-2:ed-1" , "file://Grid_Modelling_Appendix_1_CIM100v111_UK_LTDS_AllProfiles.eap";
+        dcterms:description   "Describing constraints extracted from RDFS.";
+        dcterms:identifier    "urn:uuid30840f53-da34-468f-b78d-9cf85f96cb24";
+        dcterms:issued        "2023-12-26T08:17:31.868662200"^^xsd:dateTime;
+        dcterms:language      "en-GB";
+        dcterms:license       "https://www.apache.org/licenses/LICENSE-2.0"@en;
+        dcterms:modified      "2023-06-26"^^xsd:date;
+        dcterms:publisher     "Ofgem"@en;
+        dcterms:rightsHolder  "Ofgem"@en;
+        dcterms:title         "LTDS System Capacity Vocabulary"@en;
+        owl:versionIRI        <Constraints/1.0>;
+        owl:versionInfo       "1.0.0"@en;
+        dcat:keyword          "SYSCAP";
+        dcat:theme            "constraint"@en .
+
+syscap:ShortCircuitResult.symmetricalBreakingCurrentAngle-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "ShortCircuitResult.symmetricalBreakingCurrentAngle-cardinality";
+        sh:order        3;
+        sh:path         gb:ShortCircuitResult.symmetricalBreakingCurrentAngle;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.generationConnectionOffersMadeCount-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.generationConnectionOffersMadeCount-cardinality";
+        sh:order        7;
+        sh:path         gb:PastYearConnectionActivity.generationConnectionOffersMadeCount;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.generationConnectionOffersAcceptedCount-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:integer;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.generationConnectionOffersAcceptedCount-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        11;
+        sh:path         gb:PastYearConnectionActivity.generationConnectionOffersAcceptedCount;
+        sh:severity     sh:Violation .
+
+ido:CardinalityGroup  rdf:type  sh:PropertyGroup;
+        rdfs:label  "CardinalityIO";
+        sh:order    0 .
+
+syscap:PastYearConnectionActivity.generationConnectionOffersMadeCapacity-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.generationConnectionOffersMadeCapacity-cardinality";
+        sh:order        12;
+        sh:path         gb:PastYearConnectionActivity.generationConnectionOffersMadeCapacity;
+        sh:severity     sh:Violation .
+
+syscap:FirmCapacity.firmCapacitySummer-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "FirmCapacity.firmCapacitySummer-cardinality";
+        sh:order        0;
+        sh:path         gb:FirmCapacity.firmCapacitySummer;
+        sh:severity     sh:Violation .
+
+syscap:SummaryShortCircuitResult.BusbarGroup-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        syscap:AssociationsGroup;
+        sh:in           ( gb:BusbarGroup );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: gb:BusbarGroup";
+        sh:name         "SummaryShortCircuitResult.BusbarGroup-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        0;
+        sh:path         ( gb:SummaryShortCircuitResult.BusbarGroup rdf:type );
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.maxLoadingSummer-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "MaximumLoading.maxLoadingSummer-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        4;
+        sh:path         gb:MaximumLoading.maxLoadingSummer;
+        sh:severity     sh:Violation .
+
+syscap:FirmCapacity.firmCapacityWinter-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "FirmCapacity.firmCapacityWinter-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        2;
+        sh:path         gb:FirmCapacity.firmCapacityWinter;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity-cardinality";
+        sh:order        3;
+        sh:path         gb:PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.name-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.name-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.name;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.qAtMaxLoadingWinter-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "MaximumLoading.qAtMaxLoadingWinter-cardinality";
+        sh:order        1;
+        sh:path         gb:MaximumLoading.qAtMaxLoadingWinter;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading
+        rdf:type        sh:NodeShape;
+        sh:property     syscap:MaximumLoading.qAtMaxLoadingWinter-datatype , syscap:MaximumLoading.maxLoadingWinter-datatype , ido:IdentifiedObject.mRID-cardinality , syscap:MaximumLoading.BusbarGroup-valueType , ido:IdentifiedObject.name-cardinality , syscap:MaximumLoading.maxLoadingSummer-cardinality , ido:IdentifiedObject.description-datatype , syscap:MaximumLoading.qAtMaxLoadingSummer-cardinality , syscap:MaximumLoading.qAtMaxLoadingWinter-cardinality , syscap:MaximumLoading.BusbarGroup-cardinality , ido:IdentifiedObject.mRID-datatype , ido:IdentifiedObject.description-cardinality , ido:IdentifiedObject.name-datatype , syscap:MaximumLoading.qAtMaxLoadingSummer-datatype , syscap:MaximumLoading.maxLoadingWinter-cardinality , syscap:MaximumLoading.maxLoadingSummer-datatype;
+        sh:targetClass  gb:MaximumLoading .
+
+syscap:PastYearConnectionActivity.loadBudgetEstimatesProvidedCount-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:integer;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.loadBudgetEstimatesProvidedCount-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        2;
+        sh:path         gb:PastYearConnectionActivity.loadBudgetEstimatesProvidedCount;
+        sh:severity     sh:Violation .
+
+syscap:SummaryShortCircuitResult.BusbarGroup-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "SummaryShortCircuitResult.BusbarGroup-cardinality";
+        sh:order        0;
+        sh:path         gb:SummaryShortCircuitResult.BusbarGroup;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.maxLoadingWinter-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "MaximumLoading.maxLoadingWinter-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        2;
+        sh:path         gb:MaximumLoading.maxLoadingWinter;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity
+        rdf:type        sh:NodeShape;
+        sh:property     syscap:PastYearConnectionActivity.generationConnectionOffersAcceptedCount-cardinality , syscap:PastYearConnectionActivity.loadConnectionOffersAcceptedCount-datatype , ido:IdentifiedObject.name-cardinality , syscap:PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity-datatype , syscap:PastYearConnectionActivity.generationConnectionOffersMadeCapacity-datatype , syscap:PastYearConnectionActivity.generationBudgetEstimatesProvidedCapacity-cardinality , ido:IdentifiedObject.description-cardinality , syscap:PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity-datatype , syscap:PastYearConnectionActivity.loadConnectionOffersMadeCapacity-datatype , syscap:PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity-cardinality , syscap:PastYearConnectionActivity.loadBudgetEstimatesProvidedCount-datatype , syscap:PastYearConnectionActivity.loadConnectionOffersMadeCapacity-cardinality , syscap:PastYearConnectionActivity.generationConnectionOffersMadeCount-cardinality , syscap:PastYearConnectionActivity.generationConnectionOffersMadeCapacity-cardinality , syscap:PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity-cardinality , syscap:PastYearConnectionActivity.loadBudgetEstimatesProvidedCapacity-datatype , syscap:PastYearConnectionActivity.generationBudgetEstimatesProvidedCapacity-datatype , syscap:PastYearConnectionActivity.BusbarGroup-valueType , syscap:PastYearConnectionActivity.generationBudgetEstimatesProvidedCount-datatype , syscap:PastYearConnectionActivity.loadConnectionOffersAcceptedCount-cardinality , syscap:PastYearConnectionActivity.loadBudgetEstimatesProvidedCount-cardinality , syscap:PastYearConnectionActivity.BusbarGroup-cardinality , syscap:PastYearConnectionActivity.generationConnectionOffersMadeCount-datatype , syscap:PastYearConnectionActivity.generationConnectionOffersAcceptedCount-datatype , ido:IdentifiedObject.mRID-cardinality , ido:IdentifiedObject.mRID-datatype , ido:IdentifiedObject.description-datatype , syscap:PastYearConnectionActivity.loadConnectionOffersAcceptedCapacity-cardinality , ido:IdentifiedObject.name-datatype , syscap:PastYearConnectionActivity.generationBudgetEstimatesProvidedCount-cardinality , syscap:PastYearConnectionActivity.loadConnectionOffersMadeCount-datatype , syscap:PastYearConnectionActivity.loadConnectionOffersMadeCount-cardinality;
+        sh:targetClass  gb:PastYearConnectionActivity .
+
+syscap:PastYearConnectionActivity.generationBudgetEstimatesProvidedCapacity-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.generationBudgetEstimatesProvidedCapacity-cardinality";
+        sh:order        1;
+        sh:path         gb:PastYearConnectionActivity.generationBudgetEstimatesProvidedCapacity;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.generationConnectionOffersMadeCapacity-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.generationConnectionOffersMadeCapacity-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        12;
+        sh:path         gb:PastYearConnectionActivity.generationConnectionOffersMadeCapacity;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.qAtMaxLoadingSummer-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "MaximumLoading.qAtMaxLoadingSummer-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0;
+        sh:path         gb:MaximumLoading.qAtMaxLoadingSummer;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.BusbarGroup-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "MaximumLoading.BusbarGroup-cardinality";
+        sh:order        3;
+        sh:path         gb:MaximumLoading.BusbarGroup;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.description-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:string;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        ido:DatatypesGroupIO;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "IdentifiedObject.description-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.description;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.name-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "IdentifiedObject.name-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.name;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        5;
+        sh:path         gb:PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.BusbarGroup-valueType
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the value type of the association at the used direction.";
+        sh:group        syscap:AssociationsGroup;
+        sh:in           ( gb:BusbarGroup );
+        sh:message      "One of the following does not conform: 1) The value type shall be IRI; 2) The value type shall be an instance of the class: gb:BusbarGroup";
+        sh:name         "PastYearConnectionActivity.BusbarGroup-valueType";
+        sh:nodeKind     sh:IRI;
+        sh:order        6;
+        sh:path         ( gb:PastYearConnectionActivity.BusbarGroup rdf:type );
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.maxLoadingSummer-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "MaximumLoading.maxLoadingSummer-cardinality";
+        sh:order        4;
+        sh:path         gb:MaximumLoading.maxLoadingSummer;
+        sh:severity     sh:Violation .
+
+syscap:AssociationsGroup
+        rdf:type    sh:PropertyGroup;
+        rdfs:label  "Associations";
+        sh:order    2 .
+
+syscap:CardinalityGroup
+        rdf:type    sh:PropertyGroup;
+        rdfs:label  "Cardinality";
+        sh:order    0 .
+
+syscap:ShortCircuitResult.peakCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "ShortCircuitResult.peakCurrent-cardinality";
+        sh:order        1;
+        sh:path         gb:ShortCircuitResult.peakCurrent;
+        sh:severity     sh:Violation .
+
+syscap:ShortCircuitResult.faultKind-datatype
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:in           ( gb:ShortCircuitFaultKind.threePhase gb:ShortCircuitFaultKind.singlePhase );
+        sh:message      "The datatype is not IRI (Internationalized Resource Identifier) or it is enumerated value not part of the profile.";
+        sh:name         "ShortCircuitResult.faultKind-datatype";
+        sh:nodeKind     sh:IRI;
+        sh:order        4;
+        sh:path         gb:ShortCircuitResult.faultKind;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.generationBudgetEstimatesProvidedCapacity-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.generationBudgetEstimatesProvidedCapacity-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         gb:PastYearConnectionActivity.generationBudgetEstimatesProvidedCapacity;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadConnectionOffersAcceptedCount-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.loadConnectionOffersAcceptedCount-cardinality";
+        sh:order        10;
+        sh:path         gb:PastYearConnectionActivity.loadConnectionOffersAcceptedCount;
+        sh:severity     sh:Violation .
+
+ido:IdentifiedObject.description-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        ido:CardinalityIO;
+        sh:maxCount     1;
+        sh:message      "Cardinality violation. Upper bound shall be 1";
+        sh:name         "IdentifiedObject.description-cardinality";
+        sh:order        0.1;
+        sh:path         cim:IdentifiedObject.description;
+        sh:severity     sh:Violation .
+
+ido:DatatypesGroupIO  rdf:type  sh:PropertyGroup;
+        rdfs:label  "DatatypesIO";
+        sh:order    1 .
+
+syscap:PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity-cardinality";
+        sh:order        5;
+        sh:path         gb:PastYearConnectionActivity.generationConnectionOffersAcceptedCapacity;
+        sh:severity     sh:Violation .
+
+syscap:FirmCapacity.BusbarGroup-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the association at the used direction.";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Association with cardinality violation at the used direction.";
+        sh:minCount     1;
+        sh:name         "FirmCapacity.BusbarGroup-cardinality";
+        sh:order        1;
+        sh:path         gb:FirmCapacity.BusbarGroup;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.qAtMaxLoadingWinter-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "MaximumLoading.qAtMaxLoadingWinter-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        1;
+        sh:path         gb:MaximumLoading.qAtMaxLoadingWinter;
+        sh:severity     sh:Violation .
+
+syscap:ShortCircuitResult.symmetricalBreakingCurrent-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "ShortCircuitResult.symmetricalBreakingCurrent-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        2;
+        sh:path         gb:ShortCircuitResult.symmetricalBreakingCurrent;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadConnectionOffersMadeCount-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.loadConnectionOffersMadeCount-cardinality";
+        sh:order        8;
+        sh:path         gb:PastYearConnectionActivity.loadConnectionOffersMadeCount;
+        sh:severity     sh:Violation .
+
+syscap:ShortCircuitResult.symmetricalBreakingCurrentAngle-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:float;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "ShortCircuitResult.symmetricalBreakingCurrentAngle-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        3;
+        sh:path         gb:ShortCircuitResult.symmetricalBreakingCurrentAngle;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadBudgetEstimatesProvidedCount-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "PastYearConnectionActivity.loadBudgetEstimatesProvidedCount-cardinality";
+        sh:order        2;
+        sh:path         gb:PastYearConnectionActivity.loadBudgetEstimatesProvidedCount;
+        sh:severity     sh:Violation .
+
+syscap:MaximumLoading.qAtMaxLoadingSummer-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "MaximumLoading.qAtMaxLoadingSummer-cardinality";
+        sh:order        0;
+        sh:path         gb:MaximumLoading.qAtMaxLoadingSummer;
+        sh:severity     sh:Violation .
+
+syscap:ShortCircuitResult.symmetricalBreakingCurrent-cardinality
+        rdf:type        sh:PropertyShape;
+        sh:description  "This constraint validates the cardinality of the property (attribute).";
+        sh:group        syscap:CardinalityGroup;
+        sh:maxCount     1;
+        sh:message      "Missing required property (attribute).";
+        sh:minCount     1;
+        sh:name         "ShortCircuitResult.symmetricalBreakingCurrent-cardinality";
+        sh:order        2;
+        sh:path         gb:ShortCircuitResult.symmetricalBreakingCurrent;
+        sh:severity     sh:Violation .
+
+syscap:PastYearConnectionActivity.loadConnectionOffersAcceptedCount-datatype
+        rdf:type        sh:PropertyShape;
+        sh:datatype     xsd:integer;
+        sh:description  "This constraint validates the datatype of the property (attribute).";
+        sh:group        syscap:DatatypesGroup;
+        sh:message      "The datatype is not literal or it violates the xsd datatype.";
+        sh:name         "PastYearConnectionActivity.loadConnectionOffersAcceptedCount-datatype";
+        sh:nodeKind     sh:Literal;
+        sh:order        10;
+        sh:path         gb:PastYearConnectionActivity.loadConnectionOffersAcceptedCount;
+        sh:severity     sh:Violation .

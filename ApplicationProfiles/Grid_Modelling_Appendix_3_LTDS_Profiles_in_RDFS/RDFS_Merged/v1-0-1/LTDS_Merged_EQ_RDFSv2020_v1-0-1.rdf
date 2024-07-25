@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:eu="http://iec.ch/TC57/CIM100-European#"
     xmlns:nc="http://entsoe.eu/ns/nc#"
+    xmlns:cims="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dcterms="http://purl.org/dc/terms/#"
+    xmlns:eu="http://iec.ch/TC57/CIM100-European#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:profcim="http://iec.ch/TC57/ns/CIM/prof-cim#"
-    xmlns:cims="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#"
     xmlns:dcat="http://www.w3.org/ns/dcat#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:cim="http://iec.ch/TC57/CIM100#"
-    xmlns:dcterms="http://purl.org/dc/terms/#"
     xmlns:gb="http://ofgem.gov.uk/ns/CIM/LTDS/Extensions#"
   xml:base="http://iec.ch/TC57/CIM100" > 
   <rdf:Description rdf:about="http://ofgem.gov.uk/ns/CIM/LTDS/Equipment#Ontology">
@@ -24,7 +24,7 @@
     <dcat:keyword>EQ</dcat:keyword>
     <dcterms:language>en-GB</dcterms:language>
     <dcterms:license xml:lang="en">https://www.apache.org/licenses/LICENSE-2.0</dcterms:license>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-18</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-07-25</dcterms:modified>
     <dcterms:publisher xml:lang="en">Ofgem</dcterms:publisher>
     <dcterms:rightsHolder xml:lang="en">Ofgem</dcterms:rightsHolder>
     <dcat:theme xml:lang="en">vocabulary</dcat:theme>
@@ -2442,17 +2442,6 @@ IRIs are a generalization of URIs [RFC3986] that permits a wider range of Unicod
     <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://iec.ch/TC57/CIM100-European#IdentifiedObject.energyIdentCodeEic">
-    <rdfs:comment>The attribute is used for an exchange of the EIC code (Energy identification Code). The length of the string is 16 characters as defined by the EIC code. For details on EIC scheme please refer to ENTSO-E web site.</rdfs:comment>
-    <cims:dataType rdf:resource="#String"/>
-    <rdfs:domain rdf:resource="#IdentifiedObject"/>
-    <rdfs:label xml:lang="en">energyIdentCodeEic</rdfs:label>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
-    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-    <cims:stereotype>European</cims:stereotype>
-    <cims:stereotype>deprecated</cims:stereotype>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-  </rdf:Description>
   <rdf:Description rdf:about="#IdentifiedObject.mRID">
     <rdfs:comment>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.
 For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</rdfs:comment>
@@ -2470,17 +2459,6 @@ For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is map
     <rdfs:label xml:lang="en">name</rdfs:label>
     <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:1..1"/>
     <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://iec.ch/TC57/CIM100-European#IdentifiedObject.shortName">
-    <rdfs:comment>The attribute is used for an exchange of a human readable short name with length of the string 12 characters maximum.</rdfs:comment>
-    <cims:dataType rdf:resource="#String"/>
-    <rdfs:domain rdf:resource="#IdentifiedObject"/>
-    <rdfs:label xml:lang="en">shortName</rdfs:label>
-    <cims:multiplicity rdf:resource="http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#M:0..1"/>
-    <cims:stereotype rdf:resource="http://iec.ch/TC57/NonStandard/UML#attribute"/>
-    <cims:stereotype>European</cims:stereotype>
-    <cims:stereotype>deprecated</cims:stereotype>
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   </rdf:Description>
   <rdf:Description rdf:about="#Inductance">
