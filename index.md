@@ -14,6 +14,8 @@ The publication of Long Term Development Statements (LTDS), describing the chara
 
 The revised FoS introduces important new requirements for grid model data to be provided using the Common Information Model (CIM) and for the publication of Capacity Heatmap data (an example of heatmap is available <a href="https://opengridsystems.github.io/network-heatmaps-example/" target="_blank">here</a>).
 
+Blah Blah Blah.
+
 <div class="section" id="packages">
   <h2>Documentation</h2>
 
