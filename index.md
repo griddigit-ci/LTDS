@@ -3,7 +3,7 @@ layout: default
 title: Long Term Development Statement Information Hub (Sample site)
 ---
 
-# Long Term Development Statement (LTDS)
+# Long Term Development Statement (LTDS) Technical Implementation 
 
 ![Product Banner](https://via.placeholder.com/800x200)
 
@@ -14,7 +14,15 @@ The publication of Long Term Development Statements (LTDS), describing the chara
 
 On 30 April 2024, Ofgem published a revised FoS, which introduces important new requirements for grid model data to be provided using the Common Information Model (CIM) and for the publication of Capacity Heatmap data. The published Ofgem direction for the revised FoS is available <a href="https://www.ofgem.gov.uk/decision/long-term-development-statement-direction/" target="_blank">here</a>.
 
+## About this website
 
+This website hosts two types of content:
+      <li>A library of LTDS technical artefacts (current and version history)</li>
+      <li>A record of LTDS technical issues and resolutions</li> 
+
+The website is maintained under the auspices of the ENA CIM IoP Working Group with endorsement from Ofgem. It contains revised versions of LTDS technical artefacts which should be considered by implementers as superseding the originals published on the Ofgem direction website.
+
+Technical issue resolution decisions are made by the ENA IoP Working Group and any required update of technical artefacts to align with those decisions are carried out by technical support staff under their direction. Both the website and the decision-making role of the ENA CIM IoP Working Group are intended to be temporary, serving the needs of LTDS implementer community only until such time as the planned GB CIM Advisory Group and the PEL/57/1 subcommittee are establish by the British Standards Institute. 
 <div class="section" id="packages">
   <h2>Documentation</h2>
 
