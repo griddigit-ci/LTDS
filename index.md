@@ -12,10 +12,8 @@ title: Long Term Development Statement Information Hub (Sample site)
 
 The publication of Long Term Development Statements (LTDS), describing the characteristics and development of GB electricity distribution networks, is a long standing obligation on distribution network operators (DNOs), mandated through a direction, pursuant to paragraph 25.2 of the standard conditions of the Electricity Distribution Licence and described in detail in the Form of Long Term Development Statement (FoS).
 
-The revised FoS introduces important new requirements for grid model data to be provided using the Common Information Model (CIM) and for the publication of Capacity Heatmap data (an example of heatmap is available <a href="https://opengridsystems.github.io/network-heatmaps-example/" target="_blank">here</a>).
+On 30 April 2024, Ofgem published a revised FoS, which introduces important new requirements for grid model data to be provided using the Common Information Model (CIM) and for the publication of Capacity Heatmap data. The direction for the revised FoS is available <a href="https://www.ofgem.gov.uk/decision/long-term-development-statement-direction/" target="_blank">here</a>).
 
-Blah Blah Blah.
-2nd Friday
 
 <div class="section" id="packages">
   <h2>Documentation</h2>
